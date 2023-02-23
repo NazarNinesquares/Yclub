@@ -1,0 +1,468 @@
+//<================================================================ FONTS ===============================================================>\\
+
+//&display=swap - оптимізація підвантаження шрифта
+//&subset=cyrillic-ext - підвантаження кириличної версії
+@import url(https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap);
+
+@font-face {
+	font-family: 'MonumentExtended';
+	src: url(../fonts/MonumentExtended-Ultrabold.ttf) format('truetype'),
+		 url(../fonts/MonumentExtended-Ultrabold.woff) format('woff'),
+		 url(../fonts/MonumentExtended-Ultrabold.woff2) format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'MonumentExtended';
+	src: url(../fonts/MonumentExtended-Regular.ttf) format('truetype'),
+		 url(../fonts/MonumentExtended-Regular.woff) format('woff'),
+		 url(../fonts/MonumentExtended-Regular.woff2) format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+// Змінна font-family
+$ff: 'Montserrat', sans-serif;
+
+// Змінна font-size
+$fs: 16px;
+
+// Змінна font-weight
+$fw: 600;
+
+// Змінна color
+$fc: #fff;
+
+//<============================================================ CUSTOM RESET ============================================================>\\
+
+// Максимальна ширина обмежуючого контейнера
+$mw: 1300px;
+
+// Фоновий колір для body
+$bgc: #fff;
+
+// Обнулення стилів
+@import 'reset';
+
+//<====================================================== БАГАТОРАЗОВЕ ВИКОРИСТАННЯ =====================================================>\\
+
+h1 {
+	font-family: 'MonumentExtended', sans-serif;
+	font-size: 73px;
+	line-height: 1.10;
+	font-weight: 500;
+}
+
+//<================================================================= ХЕДЕР ==============================================================>\\
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 108px;
+
+	&__cont {
+		width: 100%;
+	}
+}
+
+.main-nav {
+	display: flex;
+	align-items: center;
+
+	&__logo {
+		flex: 0 0 127px;
+		position: relative;
+		margin-right: 50px;
+		z-index: 100;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__content {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+	}
+
+	&__menu {
+		margin-right: 30px;
+	}
+
+	&__join {
+		flex: 0 0 120px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 37px;
+		border-radius: 10px;
+		background: #13dfe4;
+		color: #051d23;
+		font-weight: 700;
+		font-size: 12px;
+		text-transform: uppercase;
+		border: 1px solid #bef9fa;
+		transition: all linear 0.2s;
+	}
+
+	&__join:hover {
+		background: transparent;
+		color: #13dfe4;
+	}
+
+	&__burger {
+		display: none;
+	}
+}
+
+.main-menu {
+	display: flex;
+	flex-wrap: wrap;
+
+	&__item {
+		text-align: center;
+		padding: 0 25px;
+		min-width: 110px;
+
+		&_parent {
+			position: relative;
+		}
+	
+		&_parent > a {
+			position: relative;
+			z-index: 2;
+	
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: -10px;
+				transform: translateY(-50%);
+				width: 6px;
+				height: 3px;
+				background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
+				transition: all linear 0.2s;
+				z-index: 2;
+			}
+		}
+
+		&_parent._active > a {
+	
+			&::before {
+				transform: translateY(-50%)rotate(-180deg);
+			}
+		}
+
+		& a {
+			color: #94adae;
+			text-transform: uppercase;
+			font-size: 13px;
+			line-height: 2.61;
+			transition: all linear 0.2s;
+		}
+
+		& a:hover,
+		& a._active {
+			color: #e9f5f6;
+		}
+	}
+
+	&__sub {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		padding-top: 32px;
+		border-radius: 5px;
+		background: #4b6c7585;
+		border: 1px solid #ffffff85;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all linear 0.2s;
+
+		&._active {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+		}
+
+		& li {
+			border-top: 1px solid #ffffff85;
+		}
+
+		& li a {
+			color: #94adae;
+			text-transform: uppercase;
+			font-size: 13px;
+			line-height: 2.61;
+			transition: all linear 0.2s;
+		}
+	}
+}
+
+.burger {
+	position: relative;
+	width: 30px;
+	height: 20px;
+	z-index: 100;
+
+	& span {
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%) scale(1);
+		width: 100%;
+		height: 3px;
+		background: #F5F6FA;
+		border-radius: 5px;
+		transition: transform linear 0.2s;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background: #F5F6FA;
+		border-radius: 5px;
+		transition: all linear 0.2s;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	&._active {
+
+		& span {
+			transform: translateY(-50%) scale(0);
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: #F5F6FA;
+			border-radius: 5px;
+		}
+
+		&::before {
+			top: 46%;
+			transform: rotate(45deg) translateY(-50%);
+		}
+
+		&::after {
+			bottom: 50%;
+			transform: rotate(-45deg) translateY(50%);
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	
+	.main-nav {
+	
+		&__logo {
+			margin-right: 30px;
+		}
+
+		&__menu {
+			margin-right: 15px;
+		}
+	
+		&__join {
+			flex: 0 0 110px;
+			height: 34px;
+			font-size: 10px;
+		}
+	}
+	
+	.main-menu {
+	
+		&__item {
+			padding: 0 20px;
+			min-width: 100px;
+	
+			& a {
+				font-size: 11px;
+			}
+		}
+	
+		&__sub {
+			padding-top: 28px;
+	
+			& li a {
+				font-size: 11px;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.header {
+		min-height: 70px;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #0f535f;
+			z-index: 100;
+		}
+	}
+	
+	.main-nav {
+		justify-content: space-between;
+	
+		&__logo {
+			margin-right: 0;
+		}
+
+		&__content {
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding-top: 70px;
+			padding-bottom: 30px;
+			flex-direction: column;
+			background: #0f535f;
+			overflow: auto;
+			transition: all linear 0.2s;
+			z-index: 99;
+
+			&._active {
+				top: 0;
+			}
+		}
+	
+		&__menu {
+			padding-right: 0;
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+
+		&__join {
+			flex: 0 1 40px;
+			min-height: 40px;
+			width: 140px;
+			font-size: 16px;
+		}
+
+		&__burger {
+			display: block;
+		}
+	}
+	
+	.main-menu {
+		flex-direction: column;
+		flex-wrap: nowrap;
+	
+		&__item {
+			padding: 0;
+			min-width: 220px;
+	
+			& a {
+				font-size: 16px;
+			}
+		}
+	
+		&__sub {
+			display: none;
+			position: static;
+			padding-top: 32px;
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+			transform: translate(0);
+			margin-top: -38px;
+	
+			& li a {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+//<================================================================= ФУТЕР ==============================================================>\\
+
+
+
+//<============================================================= MAINSCREEN =============================================================>\\
+
+.mainscreen {
+	background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
+
+	&__cont {
+		height: 900px;
+		padding-top: 108px;
+	}
+
+	&__tbox {
+	}
+
+	&__title {
+		max-width: 775px;
+	}
+
+	&__text {
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 2.2;
+		text-transform: uppercase;
+		max-width: 510px;
+	}
+
+	&__sub-text {
+		font-weight: 600;
+		font-size: 10px;
+		line-height: 2.2;
+		text-transform: uppercase;
+
+		& a {
+			color: #2ceced;
+			text-decoration: underline;
+		}
+
+		& a:hover {
+			color: #2ceced;
+			text-decoration: underline;
+		}
+	}
+
+	&__button {
+	}
+
+	&__social {
+	}
+}
