@@ -24,6 +24,16 @@
 	font-display: swap;
 }
 
+@font-face {
+	font-family: 'BouquetTypeface';
+	src: url(../fonts/bouquet-typeface-regular.ttf) format('truetype'),
+		 url(../fonts/bouquet-typeface-regular.woff) format('woff'),
+		 url(../fonts/bouquet-typeface-regular.woff2) format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 
 // Змінна font-family
 $ff: 'Montserrat', sans-serif;
@@ -48,13 +58,31 @@ $bgc: #fff;
 // Обнулення стилів
 @import 'reset';
 
+//<=============================================================== ЗМІННІ ===============================================================>\\
+
+$d-blue: #09242c;
+$l-blue: #21d3cf;
+
 //<====================================================== БАГАТОРАЗОВЕ ВИКОРИСТАННЯ =====================================================>\\
+
+body {
+	text-transform: uppercase;
+}
 
 h1 {
 	font-family: 'MonumentExtended', sans-serif;
 	font-size: 73px;
 	line-height: 1.10;
-	font-weight: 500;
+	font-weight: 400;
+	text-transform: none;
+}
+
+h2 {
+	font-family: 'MonumentExtended', sans-serif;
+	font-size: 58px;
+	line-height: 1.15;
+	font-weight: 400;
+	text-transform: none;
 }
 
 //<================================================================= ХЕДЕР ==============================================================>\\
@@ -95,6 +123,7 @@ h1 {
 		flex: 1 1 auto;
 		display: flex;
 		align-items: center;
+		z-index: 99;
 	}
 
 	&__menu {
@@ -108,18 +137,18 @@ h1 {
 		justify-content: center;
 		height: 37px;
 		border-radius: 10px;
-		background: #13dfe4;
+		background: $l-blue;
 		color: #051d23;
 		font-weight: 700;
 		font-size: 12px;
-		text-transform: uppercase;
-		border: 1px solid #bef9fa;
+		border: 1px solid #fff;
 		transition: all linear 0.2s;
 	}
 
 	&__join:hover {
-		background: transparent;
-		color: #13dfe4;
+		background: #123b48;
+		color: #fff;
+		border-color: #21697f;
 	}
 
 	&__burger {
@@ -167,7 +196,6 @@ h1 {
 
 		& a {
 			color: #94adae;
-			text-transform: uppercase;
 			font-size: 13px;
 			line-height: 2.61;
 			transition: all linear 0.2s;
@@ -206,7 +234,6 @@ h1 {
 
 		& li a {
 			color: #94adae;
-			text-transform: uppercase;
 			font-size: 13px;
 			line-height: 2.61;
 			transition: all linear 0.2s;
@@ -326,17 +353,24 @@ h1 {
 
 	.header {
 		min-height: 70px;
-		position: relative;
 
 		&::before {
+			display: none;
 			content: "";
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: #0f535f;
+			background: #6c9ba1;
 			z-index: 100;
+		}
+
+		&._active {
+
+			&::before {
+				display: block;
+			}
 		}
 	}
 	
@@ -356,10 +390,9 @@ h1 {
 			padding-top: 70px;
 			padding-bottom: 30px;
 			flex-direction: column;
-			background: #0f535f;
+			background: #1f4b5a;
 			overflow: auto;
 			transition: all linear 0.2s;
-			z-index: 99;
 
 			&._active {
 				top: 0;
@@ -421,10 +454,18 @@ h1 {
 //<============================================================= MAINSCREEN =============================================================>\\
 
 .mainscreen {
+	position: relative;
 	background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
+	padding-bottom: 57%;
 
 	&__cont {
-		height: 900px;
+		position: absolute;
+		padding-top: 108px;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 100%;
 		padding-top: 108px;
 	}
 
@@ -433,21 +474,22 @@ h1 {
 
 	&__title {
 		max-width: 775px;
+		margin-bottom: 10px;
 	}
 
 	&__text {
 		font-weight: 600;
 		font-size: 15px;
 		line-height: 2.2;
-		text-transform: uppercase;
 		max-width: 510px;
+		margin-bottom: 5px;
 	}
 
 	&__sub-text {
 		font-weight: 600;
 		font-size: 10px;
 		line-height: 2.2;
-		text-transform: uppercase;
+		margin-bottom: 30px;
 
 		& a {
 			color: #2ceced;
@@ -461,9 +503,401 @@ h1 {
 	}
 
 	&__button {
-		color: red;
+		position: relative;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 166px;
+		height: 55px;
+		font-family: 'MonumentExtended';
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: #051d23;
+		transition: all linear 0.2s;
+		
+		& svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+
+		& svg path {
+			transition: all linear 0.2s;
+		}
+
+		& span {
+			position: relative;
+			z-index: 2;
+		}
+
+		&:hover {
+			color: #fff;
+		
+			& svg path {
+				fill: #123b48;
+			}
+		}
 	}
 
 	&__social {
+		position: absolute;
+		right: 20px;
+		bottom: 5%;
+		display: flex;
+		gap: 20px;
+		padding: 10px 15px;
+		background: #013f4a;
+		border-radius: 5px;
+
+		& a {
+			width: 18px;
+			height: 21px;
+			transition: all linear 0.2s;
+		}
+
+		& a:hover {
+			opacity: 0.7;
+		}
+
+		& a img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+
+//<============================================================== PARTNERS ==============================================================>\\
+
+.partners {
+
+	&__cont {
+		padding: 15px 75px;
+		background: #0b2c36;
+		margin-bottom: 200px;
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		gap: 80px;
+	}
+
+	&__item {
+		width: calc(25% - 60px);
+		height: 100px;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+
+//<================================================================ TOKEN ===============================================================>\\
+
+.token {
+
+	&__cont {
+		display: flex;
+		max-width: 1065px;
+		margin: 0 auto 200px;
+	}
+
+	&__left {
+		flex: 0 1 50%;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__right {
+		flex: 0 1 50%;
+	}
+}
+
+.right-token {
+	padding-left: 90px;
+
+	&__title {
+		font-family: 'MonumentExtended';
+		font-size: 60px;
+		line-height: 1.05;
+		font-weight: 400;
+		color: #0a313b;
+		margin-bottom: 25px;
+
+		& span {
+			color: #2deeef;
+			font-weight: 800;
+		}
+	}
+
+	&__list {
+		color: #0c313b;
+		font-weight: 700;
+		margin-bottom: 30px;
+
+		& li {
+			line-height: 28px;
+			position: relative;
+			padding-left: 40px;
+		}
+
+		& li:not(:last-child) {
+			padding-bottom: 25px;
+		}
+
+		& li:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			bottom: 3px;
+			left: 14px;
+			transform: translateX(-50%);
+			width: 5px;
+			height: 18px;
+			background: #b3f3f5;
+			border-radius: 2px;
+		}
+
+		& li::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 28px;
+			height: 28px;
+			background: url(../img/home/token/home-token-2.png) center/contain no-repeat;
+		}
+	}
+
+	&__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'MonumentExtended';
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 1.04;
+		text-transform: none;
+		width: 283px;
+		height: 64px;
+		color: #0a313b;
+		background: #81f3f8;
+		border-radius: 5px;
+		border: 2px solid #81f3f8;
+		transition: all linear 0.2s;
+
+		&:hover {
+			background: linear-gradient(90deg, rgba(129,243,248,1) 0%, rgba(129,243,248,0) 60%);
+			transform: translate();
+		}
+	}
+}
+
+//<=============================================================== MISSION ==============================================================>\\
+
+.mission {
+	position: relative;
+	background: url(../img/home/mission/home-mission-2.png) center/cover no-repeat;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -4%;
+		left: 0;
+		width: 100%;
+		height: 210px;
+		background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+	}
+
+	&__cont {
+		padding-top: 100px;
+		padding-bottom: 65px;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__industry {
+		margin-bottom: 115px;
+	}
+
+	&__ecosystem {
+	}
+}
+
+.industry-mission {
+
+	&__title {
+		text-align: center;
+		font-size: 24px;
+		line-height: 1.58;
+		margin-bottom: 30px;
+		
+		& strong {
+			font-size: 38px;
+			font-family: 'BouquetTypeface';
+			font-weight: 400;
+			text-transform: none;
+			color: $l-blue;
+			margin-right: 10px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		margin-bottom: 40px;
+	}
+
+	&__video {
+		flex: 0 1 50%;
+
+		& iframe {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__tbox {
+		flex: 0 1 50%;
+		padding-left: 25px;
+
+		& p {
+			font-size: 22px;
+			line-height: 2.12;
+			max-width: 555px;
+		}
+
+		& p strong {
+			color: $l-blue;
+		}
+	}
+
+	&__bottom {
+	}
+}
+
+.industry-bottom {
+	text-align: center;
+
+	&__title {
+		color: $l-blue;
+		margin-bottom: 30px;
+		font-size: 14px;
+		line-height: 1.2;
+	}
+
+	&__tbox {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 20px;
+		column-gap: 50px;
+		margin-bottom: 50px;
+
+		& li {
+			position: relative;
+			font-size: 17px;
+			line-height: 1.2;
+			padding-left: 17px;
+		}
+
+		& li::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 7px;
+			height: 7px;
+			background: $l-blue;
+			border-radius: 50%;
+		}
+	}
+
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 157px;
+		height: 48px;
+		background: $l-blue;
+		color: #051d23;
+		font-size: 16px;
+		line-height: 1.2;
+		font-weight: 700;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		transition: all linear 0.2s;
+
+		&:hover {
+			background: #123b48;
+			color: #fff;
+			border-color: #21697f;
+		}
+	}
+}
+
+.ecosystem-mission {
+	text-align: center;
+
+	&__title {
+		font-family: 'MonumentExtended';
+		font-weight: 400;
+		font-size: 38px;
+		line-height: 1.15;
+		text-align: center;
+		text-transform: none;
+		margin-bottom: 30px;
+	}
+
+	&__ibox {
+		position: relative;
+		padding-bottom: 47%;
+		margin-bottom: 50px;
+
+		& img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 235px;
+		height: 56px;
+		padding: 10px;
+		background: $l-blue;
+		color: #051d23;
+		font-size: 18px;
+		line-height: 1.2;
+		font-weight: 600;
+		text-transform: none;
+		border: 1px solid #fff;
+		border-radius: 3px;
+		transition: all linear 0.2s;
+
+		&:hover {
+			background: #123b48;
+			color: #fff;
+			border-color: #21697f;
+		}
 	}
 }

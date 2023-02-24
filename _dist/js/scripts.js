@@ -29,4 +29,5 @@ $('.main-nav__burger').on('click', function() {
 	$(this).toggleClass('_active');
 	$('body').toggleClass('_lock');
 	$('.main-nav__content').toggleClass('_active');
+	$('.header').toggleClass('_active');
 })
