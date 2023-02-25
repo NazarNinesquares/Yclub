@@ -31,3 +31,10 @@ $('.main-nav__burger').on('click', function() {
 	$('.main-nav__content').toggleClass('_active');
 	$('.header').toggleClass('_active');
 })
+
+$('.top-roadmap__tab-nav li').on('click', function () {
+	$('.top-roadmap__tab-nav li').removeClass('_active');
+	$(this).addClass('_active');
+	$('.tab-roadmap').removeClass('_active');
+	$('.tab-roadmap[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
+})
