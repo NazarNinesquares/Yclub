@@ -85,6 +85,39 @@ h2 {
 	text-transform: none;
 }
 
+@media (max-width: 1300px) {
+
+	h1 {
+		font-size: 50px;
+	}
+	
+	h2 {
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+
+	h1 {
+		font-size: 45px;
+	}
+	
+	h2 {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 600px) {
+
+	h1 {
+		font-size: 30px;
+	}
+	
+	h2 {
+		font-size: 24px;
+	}
+}
+
 //<================================================================= ХЕДЕР ==============================================================>\\
 
 .header {
@@ -638,12 +671,11 @@ h2 {
 
 .mainscreen {
 	position: relative;
-	background: url(../img/home/main/home-main-011.png) top left/cover no-repeat;
+	background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
 	padding-bottom: 57%;
 
 	&__cont {
 		position: absolute;
-		padding-top: 108px;
 		top: 0;
 		left: 50%;
 		transform: translateX(-50%);
@@ -754,6 +786,128 @@ h2 {
 	}
 }
 
+@media (max-width: 1300px) {
+
+	.mainscreen {
+	
+		&__title {
+			max-width: 550px;
+		}
+	
+		&__text {
+			font-size: 12px;
+			max-width: 365px;
+		}
+	
+		&__sub-text {
+			margin-bottom: 20px;
+		}
+	
+		&__button {
+			width: 130px;
+			height: 43px;
+			font-size: 12px;
+		}
+	
+		&__social {
+			gap: 15px;
+			padding: 12px;
+	
+			& a {
+				width: 16px;
+				height: 18px;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.mainscreen {
+		background: url(../img/home/main/home-main-12.png) bottom left/cover no-repeat;
+		padding-bottom: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+
+	.mainscreen {
+		padding-bottom: 110%;
+	
+		&__title {
+			max-width: 480px;
+		}
+	
+		&__text {
+			font-size: 11px;
+			max-width: 280px;
+		}
+	
+		&__sub-text {
+			max-width: 140px;
+			line-height: 1.5;
+			margin-bottom: 15px;
+		}
+	
+		&__button {
+			width: 120px;
+			height: 40px;
+			font-size: 11px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+
+	.mainscreen {
+		padding-bottom: 175%;
+
+		&__cont {
+			padding-top: 75px;
+		}
+	
+		&__title {
+			max-width: 260px;
+		}
+	
+		&__text {
+			font-size: 12px;
+			max-width: 230px;
+			margin-bottom: 15px;
+		}
+	
+		&__sub-text {
+			font-size: 8px;
+			max-width: 200px;
+		}
+	
+		&__social {
+			top: 75px;
+			bottom: unset;
+			right: 15px;
+			width: 30px;
+			height: auto;
+			flex-direction: column;
+			align-items: center;
+			gap: 15px;
+			padding: 0;
+			background: none;
+	
+			& a {
+				width: 25px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 425px) {
+
+	.mainscreen {
+		padding-bottom: 200%;
+	}
+}
+
 //<============================================================== PARTNERS ==============================================================>\\
 
 .partners {
@@ -782,6 +936,74 @@ h2 {
 	}
 }
 
+@media (max-width: 1300px) {
+
+	.partners {
+
+		&__cont {
+			padding: 15px 30px;
+			margin-bottom: 100px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.partners {
+		position: relative;
+		margin-top: -100px;
+
+		&__cont {
+			padding: 15px;
+		}
+	
+		&__box {
+			gap: 40px;
+		}
+	
+		&__item {
+			width: calc(25% - 30px);
+			height: 70px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+
+	.partners {
+		margin-top: -85px;
+	
+		&__box {
+			gap: 20px;
+		}
+	
+		&__item {
+			width: calc(25% - 15px);
+			height: 55px;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+
+	.partners {
+		margin-top: -60px;
+
+		&__cont {
+			margin-bottom: 60px;
+		}
+	
+		&__box {
+			gap: 12px;
+		}
+	
+		&__item {
+			width: calc(25% - 9px);
+			height: 40px;
+		}
+	}
+}
+
 //<================================================================ TOKEN ===============================================================>\\
 
 .token {
@@ -790,6 +1012,7 @@ h2 {
 		display: flex;
 		max-width: 1065px;
 		margin: 0 auto 200px;
+		padding: 0 15px;
 	}
 
 	&__left {
@@ -818,7 +1041,7 @@ h2 {
 		color: #0a313b;
 		margin-bottom: 25px;
 
-		& span {
+		& strong {
 			color: #2deeef;
 			font-weight: 800;
 		}
@@ -881,7 +1104,112 @@ h2 {
 
 		&:hover {
 			background: linear-gradient(90deg, rgba(129,243,248,1) 0%, rgba(129,243,248,0) 60%);
-			transform: translate();
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+
+	.token {
+
+		&__cont {
+			margin: 0 auto 100px;
+			max-width: 800px;
+		}
+	}
+
+	.right-token {
+		padding-left: 60px;
+	
+		&__title {
+			font-size: 45px;
+			margin-bottom: 20px;
+		}
+	
+		&__list {
+			margin-bottom: 25px;
+	
+			& li {
+				line-height: 20px;
+				padding-left: 30px;
+				font-size: 14px;
+			}
+	
+			& li:not(:last-child) {
+				padding-bottom: 20px;
+			}
+	
+			& li:not(:last-child)::after {
+				bottom: 3px;
+				left: 10px;
+				width: 3px;
+				height: 12px;
+			}
+	
+			& li::before {
+				width: 20px;
+				height: 20px;
+			}
+		}
+	
+		&__button {
+			font-size: 16px;
+			width: 200px;
+			height: 45px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.token {
+
+		&__cont {
+			max-width: 400px;
+			flex-direction: column;
+		}
+
+		&__left {
+			margin-bottom: 30px;
+		}
+	}
+
+	.right-token {
+		padding-left: 0;
+	
+		&__title {
+			font-size: 30px;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+	
+		&__list {
+			max-width: 265px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+	
+			& li {
+				line-height: 15px;
+				padding-left: 20px;
+				font-size: 12px;
+			}
+	
+			& li:not(:last-child)::after {
+				left: 7px;
+			}
+	
+			& li::before {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	
+		&__button {
+			display: flex;
+			font-size: 13px;
+			width: 150px;
+			height: 33px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -939,6 +1267,7 @@ h2 {
 
 	&__content {
 		display: flex;
+		min-height: 375px;
 		margin-bottom: 40px;
 	}
 
@@ -949,6 +1278,7 @@ h2 {
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
+			max-height: 400px;
 		}
 	}
 
@@ -1036,12 +1366,6 @@ h2 {
 	text-align: center;
 
 	&__title {
-		font-family: 'MonumentExtended';
-		font-weight: 400;
-		font-size: 38px;
-		line-height: 1.15;
-		text-align: center;
-		text-transform: none;
 		margin-bottom: 30px;
 	}
 
@@ -1085,17 +1409,217 @@ h2 {
 	}
 }
 
+@media (max-width: 1300px) {
+
+	.mission {
+	
+		&::before {
+			height: 180px;
+		}
+	
+		&__industry {
+			margin-bottom: 90px;
+		}
+	}
+	
+	.industry-mission {
+	
+		&__title {
+			font-size: 18px;
+			margin-bottom: 30px;
+			
+			& strong {
+				font-size: 28px;
+			}
+		}
+	
+		&__content {
+			margin-bottom: 30px;
+		}
+	
+		&__tbox {
+			padding-left: 20px;
+	
+			& p {
+				font-size: 18px;
+				max-width: 470px;
+			}
+		}
+	}
+	
+	.industry-bottom {
+	
+		&__title {
+			margin-bottom: 25px;
+		}
+	
+		&__tbox {
+			row-gap: 15px;
+			column-gap: 30px;
+			margin-bottom: 40px;
+	
+			& li {
+				font-size: 14px;
+			}
+		}
+	
+		&__button {
+			width: 130px;
+			height: 40px;
+			font-size: 14px;
+		}
+	}
+	
+	.ecosystem-mission {
+	
+		&__ibox {
+			margin-bottom: 30px;
+		}
+	
+		&__button {
+			width: 180px;
+			height: 43px;
+			font-size: 16px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.mission {
+	
+		&::before {
+			height: 140px;
+			top: -3%;
+		}
+	
+		&__industry {
+			margin-bottom: 50px;
+		}
+	}
+	
+	.industry-mission {
+	
+		&__content {
+			min-height: 270px;
+		}
+	
+		&__tbox {
+	
+			& p {
+				font-size: 15px;
+			}
+		}
+	}
+	
+	.industry-bottom {
+	
+		&__tbox {
+			column-gap: 20px;
+			margin-bottom: 30px;
+		}
+	}
+	
+	.ecosystem-mission {
+	
+		&__ibox {
+			padding-bottom: 70%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.mission {
+	
+		&::before {
+			height: 105px;
+		}
+	}
+	
+	.industry-mission {
+	
+		&__content {
+			position: relative;
+			min-height: unset;
+			flex-direction: column;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+		}
+
+		&__content::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 250px;
+			height: 5px;
+			background: #fff;
+			border-radius: 2px;
+		}
+
+		&__video {
+			position: relative;
+			padding-bottom: 54%;
+			margin-bottom: 30px;
+			
+			& iframe {
+				position: absolute;
+			}
+		}
+	
+		&__tbox {
+			padding: 0;
+	
+			& p {
+				font-size: 14px;
+				text-align: center;
+				margin: 0 auto;
+			}
+		}
+	}
+	
+	.industry-bottom {
+	
+		&__tbox {
+			flex-direction: column;
+			align-items: flex-start;
+			column-gap: 0;
+			row-gap: 10px;
+			text-align: left;
+			max-width: 350px;
+			margin: 0 auto;
+			margin-bottom: 30px;
+		}
+	
+		&__button {
+			width: 115px;
+			height: 35px;
+			font-size: 12px;
+		}
+	}
+	
+	.ecosystem-mission {
+	
+		&__ibox {
+			margin-bottom: 20px;
+		}
+	}
+}
+
 //<============================================================== CHARTERS ==============================================================>\\
 
 .charters {
+	position: relative;
 
 	&::before {
 		content: "";
 		position: absolute;
-		top: -22%;
+		top: -5%;
 		left: 0;
 		width: 100%;
-		height: 125px;
+		height: 124px;
 		background: url(../img/home/charters/home-charters-2.png) center left/cover no-repeat;
 	}
 
@@ -1157,6 +1681,112 @@ h2 {
 
 		&:hover {
 			background: #123b48;
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+
+	.charters {
+
+		&::before {
+			top: -6%;
+			height: 115px;
+		}
+	
+		&__subtitle {
+			font-size: 16px;
+		}
+	
+		&__text {
+			bottom: 13%;
+			font-size: 15px;
+		}
+	
+		&__button {
+			bottom: -3%;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.charters {
+
+		&__content {
+			padding-bottom: 60%;
+		}
+	
+		&__button {
+			bottom: -1%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.charters {
+
+		&::before {
+			top: -5%;
+			height: 70px;
+		}
+
+		&__cont {
+			margin-bottom: 20px;
+		}
+
+		&__title {
+			margin-bottom: 8px;
+		}
+	
+		&__subtitle {
+			font-size: 14px;
+		}
+
+		&__content {
+			padding-bottom: 70%;
+			background: url(../img/home/charters/home-charters-3.png) center/contain no-repeat;
+		}
+	
+		&__text {
+			bottom: 20%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 14px;
+			max-width: 500px;
+		}
+	
+		&__button {
+			bottom: 0;
+			width: 120px;
+			height: 35px;
+			font-size: 12px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+
+	.charters {
+
+		&__content {
+			padding-bottom: 143%;
+		}
+	
+		&__text {
+			font-size: 16px;
+			width: 300px;
+		}
+	}
+}
+
+@media (max-width: 425px) {
+
+	.charters {
+	
+		&__text {
+			bottom: 12%;
 		}
 	}
 }

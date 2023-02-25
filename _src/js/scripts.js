@@ -4,8 +4,8 @@ window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
 function windowSize(ma) {
 	if ((ma && ma.matches) || $(window).width() <= 768) {
 		$('.main-menu__item_parent').on('click', function() {
-			$('.main-menu__sub').hide()
-			$(this).children('.main-menu__sub').toggle()
+			$('.main-menu__sub').not($(this).children('.main-menu__sub')).hide();
+			$(this).children('.main-menu__sub').toggle();
 			$(this).toggleClass('_active');
 		})
 	} else {
