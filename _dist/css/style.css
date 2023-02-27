@@ -442,6 +442,10 @@ h2 {
           transform: rotate(-45deg) translateY(50%);
 }
 
+.footer {
+  background: #061d23;
+}
+
 .footer__cont {
   padding-top: 135px;
   padding-bottom: 15px;
