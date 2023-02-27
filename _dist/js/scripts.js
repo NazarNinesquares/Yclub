@@ -19,11 +19,7 @@ function windowSize(ma) {
 			$(this).children('.main-menu__sub').removeClass('_active');
 		})
 	}
-}
-
-windowSize();
-
-
+}windowSize();
 
 $('.main-nav__burger').on('click', function() {
 	$(this).toggleClass('_active');
@@ -37,4 +33,9 @@ $('.top-roadmap__tab-nav li').on('click', function () {
 	$(this).addClass('_active');
 	$('.tab-roadmap').removeClass('_active');
 	$('.tab-roadmap[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
+})
+
+$('.roadmap__scroll-top').on('click', function () {
+
+	$('html').animate({scrollTop: $('body').offset().top }, 500);
 })
