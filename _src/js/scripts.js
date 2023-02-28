@@ -39,3 +39,13 @@ $('.roadmap__scroll-top').on('click', function () {
 
 	$('html').animate({scrollTop: $('body').offset().top }, 500);
 })
+
+$('.top-ecosystem__nav li').on('click', function () {
+	
+	$('.top-ecosystem__nav li').removeClass('_active');
+	$(this).addClass('_active');
+
+	$('.mid-item').removeClass('_active');
+	$('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').addClass('_active');
+	$('html').animate({scrollTop: $('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').offset().top - 15}, 500);
+})
