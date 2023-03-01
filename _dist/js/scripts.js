@@ -1,3 +1,4 @@
+$( document ).ready(function() {
 
 window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
 
@@ -49,3 +50,17 @@ $('.top-ecosystem__nav li').on('click', function () {
 	$('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').addClass('_active');
 	$('html').animate({scrollTop: $('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').offset().top - 15}, 500);
 })
+
+$(document).scroll(function() {
+
+	let scrollDistance = 0
+	let scrollTop = $(window).scrollTop();
+
+	if (scrollTop > scrollDistance) {
+		$('.header, .main-menu__sub').addClass('_scroll');
+	} else {
+		$('.header, .main-menu__sub').removeClass('_scroll');
+	}
+})
+
+});

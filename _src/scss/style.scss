@@ -140,11 +140,18 @@ h2 {
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	min-height: 108px;
+	z-index: 100;
+	transition: all linear 0.2s;
+
+	&._scroll {
+		background: #011c2b;
+		box-shadow: 0px 4px 4px #00000080;
+	}
 
 	&__cont {
 		width: 100%;
@@ -264,12 +271,17 @@ h2 {
 		width: 100%;
 		padding-top: 32px;
 		border-radius: 5px;
-		background: #4b6c7585;
+		// background: #4b6c7585;
+		background: #4b6c75f2;
 		border: 1px solid #ffffff85;
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
 		transition: all linear 0.2s;
+
+		// &._scroll {
+		// 	background: #4b6c75f2;
+		// }
 
 		&._active {
 			opacity: 1;
@@ -685,6 +697,15 @@ h2 {
 			background: url(../img/home/footer/home-footer-04.png) center/contain no-repeat;
 			transition: all linear 0.2s;
 		}
+
+		& li a span {
+			display: inline-block;
+			font-size: 10px;
+			line-height: 1;
+			background: $l-blue;
+			border-radius: 3px;
+			padding: 3px;
+		}
 	}
 }
 
@@ -932,6 +953,27 @@ h2 {
 	background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
 	padding-bottom: 57%;
 
+	&__ibg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+		&_mobile {
+			display: none;
+		}
+		
+		&_part {
+			z-index: 2;
+		}
+	}
+
+	&__ibg2 {
+		z-index: 2;
+	}
+
 	&__cont {
 		position: absolute;
 		top: 0;
@@ -939,7 +981,7 @@ h2 {
 		transform: translateX(-50%);
 		width: 100%;
 		height: 100%;
-		padding-top: 108px;
+		padding-top: 128px;
 	}
 
 	&__tbox {
@@ -1084,6 +1126,28 @@ h2 {
 	.mainscreen {
 		background: url(../img/home/main/home-main-08.png) bottom left/cover no-repeat;
 		padding-bottom: 100%;
+
+		// &__ibg {
+		// 	position: absolute;
+		// 	top: unset;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	object-fit: cover;
+
+		// 	&_main {
+		// 		display: none;
+		// 	}
+	
+		// 	&_mobile {
+		// 		display: block;
+		// 	}
+			
+		// 	&_part {
+		// 		z-index: 2;
+		// 	}
+		// }
 	}
 }
 
@@ -1183,8 +1247,12 @@ h2 {
 	}
 
 	&__item {
-		width: calc(25% - 60px);
-		height: 100px;
+		width: calc(22.33% - 60px);
+		height: 85px;
+
+		&_big {
+			width: calc(30% - 60px);
+		}
 
 		& img {
 			width: 100%;
@@ -1527,10 +1595,11 @@ h2 {
 		display: flex;
 		min-height: 375px;
 		margin-bottom: 40px;
+		column-gap: 60px;
 	}
 
 	&__video {
-		flex: 0 1 50%;
+		width: calc(50% - 30px);
 
 		& iframe {
 			width: 100%;
@@ -1541,8 +1610,7 @@ h2 {
 	}
 
 	&__tbox {
-		flex: 0 1 50%;
-		padding-left: 25px;
+		width: calc(50% - 30px);
 
 		& p {
 			font-size: 22px;
@@ -1696,7 +1764,6 @@ h2 {
 		}
 	
 		&__tbox {
-			padding-left: 20px;
 	
 			& p {
 				font-size: 18px;
@@ -1760,9 +1827,15 @@ h2 {
 	
 		&__content {
 			min-height: 270px;
+			column-gap: 30px;
+		}
+		
+		&__video {
+			width: calc(50% - 15px);
 		}
 	
 		&__tbox {
+			width: calc(50% - 15px);
 	
 			& p {
 				font-size: 15px;
@@ -1819,6 +1892,7 @@ h2 {
 
 		&__video {
 			position: relative;
+			width: 100%;
 			padding-bottom: 54%;
 			margin-bottom: 30px;
 			
@@ -1828,6 +1902,7 @@ h2 {
 		}
 	
 		&__tbox {
+			width: 100%;
 			padding: 0;
 	
 			& p {
@@ -1917,6 +1992,11 @@ h2 {
 		color: #0a313b;
 		background: #fff;
 		text-align: center;
+		max-width: 685px;
+
+		& strong {
+			font-weight: 700;
+		}
 	}
 
 	&__button {
@@ -2156,10 +2236,15 @@ h2 {
 
 .roadmap-item {
 	position: relative;
-	background: #4b6c7535;
+	background: rgba(75, 108, 117, 0.4);
 	border: 1px solid #ffffff85;
 	border-radius: 25px;
 	padding: 45px 35px;
+
+	&_check {
+		background: #2a7a9080;
+		border: 1px solid #4396ab;
+	}
 
 	&_check::before {
 		content: "";
@@ -2191,7 +2276,8 @@ h2 {
 		font-family: 'MonumentExtended';
 		font-size: 38px;
 		font-weight: 400;
-		line-height: 1.15;
+		line-height: 1;
+		backdrop-filter: blur(3px);
 	}
 
 	&__list {
@@ -2446,7 +2532,7 @@ h2 {
 		flex-direction: column-reverse;
 		align-items: center;
 		max-width: 550px;
-		// margin: 0 auto;
+		margin: 0 auto;
 		margin-bottom: 250px;
 		z-index: 2;
 
@@ -2541,6 +2627,8 @@ h2 {
 	
 		&__name {
 			font-size: 35px;
+			line-height: 1.15;
+			backdrop-filter: unset;
 		}
 	
 		&__list {
