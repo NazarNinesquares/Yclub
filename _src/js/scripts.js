@@ -48,7 +48,7 @@ $('.top-ecosystem__nav li').on('click', function () {
 
 	$('.mid-item').removeClass('_active');
 	$('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').addClass('_active');
-	$('html').animate({scrollTop: $('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').offset().top - 15}, 500);
+	$('html').animate({scrollTop: $('.mid-item[data-anchor="' + $(this).data('anchor') + '"]').offset().top - $('.header').height() - 15}, 500);
 })
 
 $(document).scroll(function() {

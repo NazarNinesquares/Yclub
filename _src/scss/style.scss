@@ -2947,6 +2947,7 @@ h2 {
 		font-weight: 700;
 		line-height: 1.52;
 		color: #14d9df;
+		text-transform: none;
 	}
 }
 
@@ -3640,6 +3641,7 @@ h2 {
 	
 		&__title {
 			font-size: 18px;
+			max-width: 220px;
 		}
 	
 		&__text {
