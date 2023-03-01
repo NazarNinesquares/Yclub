@@ -35,7 +35,7 @@ $('.top-roadmap__tab-nav li').on('click', function () {
 	$('.tab-roadmap[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
 })
 
-$('.roadmap__scroll-top').on('click', function () {
+$('.scroll-top').on('click', function () {
 
 	$('html').animate({scrollTop: $('body').offset().top }, 500);
 })
