@@ -716,8 +716,19 @@ h2 {
 
 .mainscreen {
   position: relative;
-  background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
-  padding-bottom: 57%;
+  padding-bottom: 60%;
+}
+
+.mainscreen__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mainscreen__bg_mb {
+  display: none;
 }
 
 .mainscreen__ibg {
@@ -728,17 +739,16 @@ h2 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.mainscreen__ibg_mobile {
-  display: none;
+  -o-object-position: top left;
+     object-position: top left;
 }
 
 .mainscreen__ibg_part {
+  position: relative;
   z-index: 2;
 }
 
-.mainscreen__ibg2 {
+.mainscreen .mainscreen__ibg_part {
   z-index: 2;
 }
 
@@ -752,6 +762,7 @@ h2 {
   width: 100%;
   height: 100%;
   padding-top: 128px;
+  z-index: 3;
 }
 
 .mainscreen__title {
@@ -839,7 +850,7 @@ h2 {
 .mainscreen__social {
   position: absolute;
   right: 20px;
-  bottom: 5%;
+  bottom: 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -868,6 +879,11 @@ h2 {
      object-fit: contain;
 }
 
+.partners {
+  position: relative;
+  margin-top: -50px;
+}
+
 .partners__cont {
   padding: 15px 75px;
   background: #0b2c36;
@@ -881,16 +897,27 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 80px;
+  gap: 100px;
 }
 
 .partners__item {
-  width: calc(22.33% - 60px);
   height: 85px;
 }
 
-.partners__item_big {
-  width: calc(30% - 60px);
+.partners__item_1 {
+  width: calc(26.7% - 75px);
+}
+
+.partners__item_2 {
+  width: calc(22% - 75px);
+}
+
+.partners__item_3 {
+  width: calc(17.6% - 75px);
+}
+
+.partners__item_4 {
+  width: calc(33.7% - 75px);
 }
 
 .partners__item img {
@@ -2031,8 +2058,11 @@ h2 {
   }
 
   .partners__cont {
-    padding: 15px 30px;
     margin-bottom: 100px;
+  }
+
+  .partners__item {
+    height: 50px;
   }
 
   .token__cont {
@@ -2328,26 +2358,57 @@ h2 {
   }
 
   .mainscreen {
-    background: url(../img/home/main/home-main-08.png) bottom left/cover no-repeat;
     padding-bottom: 100%;
+  }
+
+  .mainscreen__bg_mb {
+    display: block;
+  }
+
+  .mainscreen__bg_dt {
+    display: none;
+  }
+
+  .mainscreen__ibg {
+    -o-object-position: bottom left;
+       object-position: bottom left;
+  }
+
+  .mainscreen__social {
+    bottom: 18%;
   }
 
   .partners {
     position: relative;
-    margin-top: -100px;
+    margin-top: -16%;
   }
 
   .partners__cont {
-    padding: 15px;
+    padding: 45px 35px;
   }
 
   .partners__box {
-    gap: 40px;
+    gap: 60px;
   }
 
   .partners__item {
-    width: calc(25% - 30px);
-    height: 70px;
+    height: 50px;
+  }
+
+  .partners__item_1 {
+    width: calc(26% - 45px);
+  }
+
+  .partners__item_2 {
+    width: calc(21.5% - 45px);
+  }
+
+  .partners__item_3 {
+    width: calc(17.1% - 45px);
+  }
+
+  .partners__item_4 {
+    width: calc(35.4% - 45px);
   }
 
   .mission::before {
@@ -2870,6 +2931,34 @@ h2 {
     width: 120px;
     height: 40px;
     font-size: 11px;
+  }
+
+  .partners__cont {
+    padding: 25px 10px;
+  }
+
+  .partners__box {
+    gap: 40px;
+  }
+
+  .partners__item {
+    height: 35px;
+  }
+
+  .partners__item_1 {
+    width: calc(26% - 30px);
+  }
+
+  .partners__item_2 {
+    width: calc(21.5% - 30px);
+  }
+
+  .partners__item_3 {
+    width: calc(17.1% - 30px);
+  }
+
+  .partners__item_4 {
+    width: calc(35.4% - 30px);
   }
 
   .token__cont {
@@ -3479,17 +3568,28 @@ h2 {
     height: 20px;
   }
 
-  .partners {
-    margin-top: -85px;
-  }
-
   .partners__box {
     gap: 20px;
   }
 
   .partners__item {
-    width: calc(25% - 15px);
-    height: 55px;
+    height: 27px;
+  }
+
+  .partners__item_1 {
+    width: calc(26% - 15px);
+  }
+
+  .partners__item_2 {
+    width: calc(21.5% - 15px);
+  }
+
+  .partners__item_3 {
+    width: calc(17.1% - 15px);
+  }
+
+  .partners__item_4 {
+    width: calc(35.4% - 15px);
   }
 
   .charters__content {
@@ -3623,21 +3723,29 @@ h2 {
     padding-bottom: 200%;
   }
 
-  .partners {
-    margin-top: -60px;
-  }
-
   .partners__cont {
     margin-bottom: 60px;
+    padding: 15px 10px;
   }
 
   .partners__box {
     gap: 12px;
   }
 
-  .partners__item {
-    width: calc(25% - 9px);
-    height: 40px;
+  .partners__item_1 {
+    width: calc(26% - 9px);
+  }
+
+  .partners__item_2 {
+    width: calc(21.5% - 9px);
+  }
+
+  .partners__item_3 {
+    width: calc(17.1% - 9px);
+  }
+
+  .partners__item_4 {
+    width: calc(35.4% - 9px);
   }
 
   .charters__text {

@@ -950,8 +950,20 @@ h2 {
 
 .mainscreen {
 	position: relative;
-	background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
-	padding-bottom: 57%;
+	// background: url(../img/home/main/home-main-01.png) top left/cover no-repeat;
+	padding-bottom: 60%;
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		&_mb {
+			display: none;
+		}
+	}
 
 	&__ibg {
 		position: absolute;
@@ -960,17 +972,15 @@ h2 {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: top left;
 
-		&_mobile {
-			display: none;
-		}
-		
 		&_part {
+			position: relative;
 			z-index: 2;
 		}
 	}
-
-	&__ibg2 {
+	
+	.mainscreen__ibg_part {
 		z-index: 2;
 	}
 
@@ -982,6 +992,7 @@ h2 {
 		width: 100%;
 		height: 100%;
 		padding-top: 128px;
+		z-index: 3;
 	}
 
 	&__tbox {
@@ -1061,7 +1072,7 @@ h2 {
 	&__social {
 		position: absolute;
 		right: 20px;
-		bottom: 5%;
+		bottom: 10%;
 		display: flex;
 		gap: 20px;
 		padding: 10px 15px;
@@ -1124,30 +1135,27 @@ h2 {
 @media (max-width: 992px) {
 
 	.mainscreen {
-		background: url(../img/home/main/home-main-08.png) bottom left/cover no-repeat;
+		// background: url(../img/home/main/home-main-08.png) bottom left/cover no-repeat;
 		padding-bottom: 100%;
 
-		// &__ibg {
-		// 	position: absolute;
-		// 	top: unset;
-		// 	bottom: 0;
-		// 	left: 0;
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	object-fit: cover;
+		&__bg {
 
-		// 	&_main {
-		// 		display: none;
-		// 	}
-	
-		// 	&_mobile {
-		// 		display: block;
-		// 	}
+			&_mb {
+				display: block;
+			}
 			
-		// 	&_part {
-		// 		z-index: 2;
-		// 	}
-		// }
+			&_dt {
+				display: none;
+			}
+		}
+
+		&__ibg {
+			object-position: bottom left;
+		}
+
+		&__social {
+			bottom: 18%;
+		}
 	}
 }
 
@@ -1233,6 +1241,8 @@ h2 {
 //<============================================================== PARTNERS ==============================================================>\\
 
 .partners {
+	position: relative;
+	margin-top: -50px;
 
 	&__cont {
 		padding: 15px 75px;
@@ -1243,15 +1253,26 @@ h2 {
 	&__box {
 		display: flex;
 		align-items: center;
-		gap: 80px;
+		gap: 100px;
 	}
 
 	&__item {
-		width: calc(22.33% - 60px);
 		height: 85px;
 
-		&_big {
-			width: calc(30% - 60px);
+		&_1 {
+			width: calc(26.7% - 75px);
+		}
+
+		&_2 {
+			width: calc(22% - 75px);
+		}
+
+		&_3 {
+			width: calc(17.6% - 75px);
+		}
+
+		&_4 {
+			width: calc(33.7% - 75px);
 		}
 
 		& img {
@@ -1267,8 +1288,11 @@ h2 {
 	.partners {
 
 		&__cont {
-			padding: 15px 30px;
 			margin-bottom: 100px;
+		}
+
+		&__item {
+			height: 50px;
 		}
 	}
 }
@@ -1277,10 +1301,44 @@ h2 {
 
 	.partners {
 		position: relative;
-		margin-top: -100px;
+		margin-top: -16%;
 
 		&__cont {
-			padding: 15px;
+			padding: 45px 35px;
+		}
+	
+		&__box {
+			gap: 60px;
+		}
+	
+		&__item {
+			height: 50px;
+
+			&_1 {
+				width: calc(26% - 45px);
+			}
+	
+			&_2 {
+				width: calc(21.5% - 45px);
+			}
+	
+			&_3 {
+				width: calc(17.1% - 45px);
+			}
+	
+			&_4 {
+				width: calc(35.4% - 45px);
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.partners {
+
+		&__cont {
+			padding: 25px 10px;
 		}
 	
 		&__box {
@@ -1288,8 +1346,23 @@ h2 {
 		}
 	
 		&__item {
-			width: calc(25% - 30px);
-			height: 70px;
+			height: 35px;
+
+			&_1 {
+				width: calc(26% - 30px);
+			}
+	
+			&_2 {
+				width: calc(21.5% - 30px);
+			}
+	
+			&_3 {
+				width: calc(17.1% - 30px);
+			}
+	
+			&_4 {
+				width: calc(35.4% - 30px);
+			}
 		}
 	}
 }
@@ -1297,15 +1370,29 @@ h2 {
 @media (max-width: 600px) {
 
 	.partners {
-		margin-top: -85px;
 	
 		&__box {
 			gap: 20px;
 		}
 	
 		&__item {
-			width: calc(25% - 15px);
-			height: 55px;
+			height: 27px;
+
+			&_1 {
+				width: calc(26% - 15px);
+			}
+	
+			&_2 {
+				width: calc(21.5% - 15px);
+			}
+	
+			&_3 {
+				width: calc(17.1% - 15px);
+			}
+	
+			&_4 {
+				width: calc(35.4% - 15px);
+			}
 		}
 	}
 }
@@ -1313,10 +1400,10 @@ h2 {
 @media (max-width: 425px) {
 
 	.partners {
-		margin-top: -60px;
 
 		&__cont {
 			margin-bottom: 60px;
+			padding: 15px 10px;
 		}
 	
 		&__box {
@@ -1324,8 +1411,22 @@ h2 {
 		}
 	
 		&__item {
-			width: calc(25% - 9px);
-			height: 40px;
+
+			&_1 {
+				width: calc(26% - 9px);
+			}
+	
+			&_2 {
+				width: calc(21.5% - 9px);
+			}
+	
+			&_3 {
+				width: calc(17.1% - 9px);
+			}
+	
+			&_4 {
+				width: calc(35.4% - 9px);
+			}
 		}
 	}
 }
