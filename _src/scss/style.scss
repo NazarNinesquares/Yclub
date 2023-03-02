@@ -210,6 +210,28 @@ h2 {
 	&__burger {
 		display: none;
 	}
+
+	&_dark {
+
+		.main-menu__item._active a {
+			color: #051d23;
+		}
+		
+		.main-nav__burger span,
+		.main-nav__burger::before,
+		.main-nav__burger::after {
+			background: #051d23;
+		}
+
+		.main-nav__burger._scroll {
+
+			.main-nav__burger span,
+			.main-nav__burger::before,
+			.main-nav__burger::after {
+				background: #fff;
+			}
+		}
+	}
 }
 
 .main-menu {
@@ -220,6 +242,11 @@ h2 {
 		text-align: center;
 		padding: 0 25px;
 		min-width: 110px;
+
+		&._active a {
+			color: #fff;
+			font-weight: 700;
+		}
 
 		&_parent {
 			position: relative;
@@ -1440,6 +1467,11 @@ h2 {
 		max-width: 1065px;
 		margin: 0 auto 200px;
 		padding: 0 15px;
+
+		&_padding {
+			padding-top: 280px;
+			padding-bottom: 235px;
+		}
 	}
 
 	&__left {
@@ -1542,6 +1574,11 @@ h2 {
 		&__cont {
 			margin: 0 auto 100px;
 			max-width: 800px;
+
+			&_padding {
+				padding-top: 200px;
+				padding-bottom: 180px;
+			}
 		}
 	}
 
@@ -1594,6 +1631,11 @@ h2 {
 		&__cont {
 			max-width: 400px;
 			flex-direction: column;
+
+			&_padding {
+				padding-top: 100px;
+				padding-bottom: 95px;
+			}
 		}
 
 		&__left {
@@ -2809,7 +2851,7 @@ h2 {
 //<############################################################### ECOSYSTEM ##############################################################>\\
 
 .ecosystem {
-	min-height: 100%;
+	min-height: 100vh;
 	background: linear-gradient(0deg, rgba(6,25,29,1) 0%, rgba(7,35,44,1) 100%);
 
 	&__cont {
@@ -3650,6 +3692,478 @@ h2 {
 			&_small {
 				font-size: 12px;
 			}
+		}
+	}
+}
+
+//<################################################################# SWAP #################################################################>\\
+
+.swap {
+	min-height: 100vh;
+	background: linear-gradient(0deg, rgba(6,25,29,1) 0%, rgba(7,35,44,1) 100%);
+
+	&__cont {
+		padding-top: 108px;
+		padding-bottom: 20px;
+	}
+
+	&__top {
+		margin-bottom: 25px;
+	}
+
+	&__main {
+	}
+
+	&__advise {
+	}
+}
+
+.top-swap {
+	text-align: center;
+
+	&__title {
+		font-family: 'MonumentExtended';
+		font-weight: 400;
+		font-size: 37px;
+		line-height: 1.16;
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 1.82;
+		text-transform: none;
+		max-width: 820px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+
+		& strong {
+			color: $l-blue;
+		}
+	}
+
+	&__button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 188px;
+		height: 50px;
+		font-size: 17px;
+		line-height: 1.2;
+		text-transform: none;
+		padding: 5px;
+		background: #0c2229;
+		border: 1px solid #17716e;
+		border-radius: 5px;
+		transition: all linear 0.2s;
+
+		&:hover {
+			background: #31c4e13a;
+			border-color: #31c4e1a4;
+		}
+	}
+}
+
+.main-swap {
+	display: flex;
+	column-gap: 40px;
+
+	&__left {
+		width: calc(50% - 20px);
+		background: #103136;
+		border: 1px solid #17716e;
+		border-radius: 5px;
+		padding: 15px;
+	}
+
+	&__right {
+		width: calc(50% - 20px);
+		background: #103136;
+		border: 1px solid #17716e;
+		border-radius: 5px;
+		padding: 15px;
+	}
+}
+
+.swap-left {
+
+	&__nav {
+		display: flex;
+		column-gap: 9px;
+		margin-bottom: 9px;
+
+		& li {
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			width: calc(33.33% - 6px);
+			height: 55px;
+			font-family: 'MonumentExtended';
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 1.2;
+			background: #0c2229;
+			border: 1px solid #17716e;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		& li:first-child {
+			border-radius: 5px 0 0 0;
+		}
+
+		& li:last-child {
+			border-radius: 0 5px 0 0;
+		}
+
+		& li._active {
+			background: #31c4e13a;
+			border-color: #31c4e1a4;
+		}
+	}
+
+	&__tab {
+		display: none;
+		background: #0c2229;
+		border: 1px solid #17716e;
+		padding: 50px 40px;
+
+		&._active {
+			display: block;
+		}
+	}
+}
+
+.swap-tab {
+
+	&__value {
+		padding-bottom: 30px;
+		margin-bottom: 30px;
+	}
+
+	&__col {
+		display: flex;
+		column-gap: 50px;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__inbox {
+		position: relative;
+		flex: 1 1 auto;
+		font-size: 17px;
+		color: #fff;
+		line-height: 1.2;
+		text-transform: none;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: -1px;
+			left: -1px;
+			width: calc(100% + 2px);
+			height: calc(100% + 2px);
+			background: linear-gradient(90deg, #31c4e1a4 0%, #0b3942 30%, #0b3942 70%, #31c4e1a4 100%);
+		}
+
+		& label {
+			position: absolute;
+			top: 50%;
+			left: 15px;
+			transform: translateY(-50%);
+			z-index: 2;
+		}
+
+		& input {
+			position: relative;
+			background: #31c4e13a;
+			// border: 1px solid #31c4e1a4;
+			// border-image: linear-gradient(to right, #31c4e1a4, #0b3942, #31c4e1a4) 1;
+			color: #fff;
+			border-radius: 5px;
+			width: 100%;
+			height: 100%;
+			padding: 20px 15px 20px 55px;
+			text-align: right;
+			z-index: 2;
+		}
+
+		& input::-webkit-outer-spin-button,
+		& input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+		}
+
+	}
+
+	&__currency {
+		flex: 0 0 130px;
+		font-size: 17px;
+		color: #fff;
+		line-height: 1.2;
+		background: #31c4e13a;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: 10px 15px;
+
+		& option {
+			background: #17716e;
+			padding: 10px 15px;
+		}
+	}
+
+	&__swap {
+	}
+
+	&__submit {
+	}
+}
+
+//<################################################################ TOKEN #################################################################>\\
+
+//<================================================================= CHART ================================================================>\\
+
+.chart {
+	position: relative;
+	background: #061d24;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -9%;
+		left: 0;
+		width: 100%;
+		height: 210px;
+		background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+	}
+
+	&__cont {
+		padding-top: 120px;
+		padding-bottom: 75px;
+	}
+
+	&__top {
+	}
+
+	&__main {
+	}
+}
+
+.top-chart {
+	text-align: center;
+
+	&__logo {
+		width: 265px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__subtext {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1.2;
+		margin-bottom: 85px;
+	}
+
+	&__info {
+	}
+}
+
+.chart-info {
+	display: flex;
+	justify-content: center;
+	max-width: 900px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+
+	&__row {
+
+		&_border {
+			border-left: 1px solid #fff;
+			border-right: 1px solid #fff;
+			padding: 0 95px;
+			margin: 0 110px;
+		}
+	}
+
+	&__number {
+		font-weight: 700;
+		font-size: 42px;
+		line-height: 1.2;
+		color: #38dde0;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 15px;
+		line-height: 1.2;
+		text-transform: none;
+	}
+}
+
+.main-chart {
+
+	&__ibox {
+		max-width: 770px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__text {
+		font-family: 'MonumentExtended';
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 1.82;
+		text-align: center;
+		margin: 0 auto;
+
+		& strong {
+			color: $l-blue;
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+
+	.chart {
+	
+		&::before {
+			top: -6%;
+			height: 180px;
+		}
+	
+		&__cont {
+			padding-top: 120px;
+			padding-bottom: 75px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+
+	.chart {
+	
+		&::before {
+			height: 140px;
+			top: -5%;
+		}
+	
+		&__cont {
+			padding-top: 100px;
+			padding-bottom: 50px;
+		}
+	}
+	
+	.top-chart {
+	
+		&__logo {
+			width: 220px;
+			margin-bottom: 15px;
+		}
+	
+		&__subtext {
+			font-size: 14px;
+			margin-bottom: 55px;
+		}
+	}
+	
+	.chart-info {
+		max-width: 900px;
+		margin-bottom: 50px;
+	
+		&__row {
+	
+			&_border {
+				padding: 0 50px;
+				margin: 0 60px;
+			}
+		}
+	
+		&__number {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+	
+		&__text {
+			font-size: 11px;
+		}
+	}
+	
+	.main-chart {
+	
+		&__text {
+			font-size: 14px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+
+	.chart {
+	
+		&::before {
+			height: 105px;
+			top: -4%;
+		}
+	}
+	
+	.top-chart {
+	
+		&__logo {
+			width: 200px;
+			margin-bottom: 10px;
+		}
+	
+		&__subtext {
+			font-size: 12px;
+			margin-bottom: 40px;
+		}
+	}
+	
+	.chart-info {
+		flex-direction: column;
+		max-width: 300px;
+		margin-bottom: 40px;
+	
+		&__row {
+	
+			&_border {
+				padding: 30px 0;
+				margin: 20px 0;
+				border-left: none;
+				border-right: none;
+				border-top: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+			}
+		}
+	
+		&__number {
+			margin-bottom: 5px;
+		}
+	
+		&__text {
+			font-size: 14px;
+		}
+	}
+	
+	.main-chart {
+	
+		&__text {
+			font-size: 14px;
 		}
 	}
 }

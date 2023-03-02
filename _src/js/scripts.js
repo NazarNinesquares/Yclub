@@ -57,9 +57,9 @@ $(document).scroll(function() {
 	let scrollTop = $(window).scrollTop();
 
 	if (scrollTop > scrollDistance) {
-		$('.header, .main-menu__sub').addClass('_scroll');
+		$('.header, .main-menu__sub, .burger').addClass('_scroll');
 	} else {
-		$('.header, .main-menu__sub').removeClass('_scroll');
+		$('.header, .main-menu__sub, .burger').removeClass('_scroll');
 	}
 })
 
