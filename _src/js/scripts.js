@@ -63,4 +63,34 @@ $(document).scroll(function() {
 	}
 })
 
+$('.swap-right__adress button').click(function() {
+	var $temp = $("<input>");
+	$("body").append($temp);
+	$temp.val($('.swap-right__adress p').text()).select();
+	document.execCommand("copy");
+	$temp.remove();
+
+	$(this).find('span').text('Adress copied!');
+});
+
+$('.swap-right__adress button').mouseleave(function () {
+	setTimeout(()=>$(this).find('span').text('Copy adress!'), 500);
+})
+
+$('.swap-left__nav li').on('click', function () {
+	
+	$('.swap-left__nav li').removeClass('_active');
+	$(this).addClass('_active');
+	$('.swap-tab, .swap-right__content').removeClass('_active');
+	$('.swap-tab[data-tab="' + $(this).data('tab') + '"], .swap-right__content[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
+})
+
+if($('.swap-right__link_adress').length) {
+
+	let text1 = $('.swap-right__link_adress a').text().slice(0, 5)
+	let text2 = $('.swap-right__link_adress a').text().slice(-2)
+
+	$('.swap-right__link_adress a').text(text1 + '..' + text2)
+}
+
 });

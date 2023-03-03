@@ -95,14 +95,15 @@
 						</ul>
 						<form class="swap-left__tab swap-tab _active" action="#" data-tab="1">
 							<div class="swap-tab__value">
-								<button class="swap-tab__swap"></button>
 								<div class="swap-tab__col">
 									<div class="swap-tab__inbox">
 										<label>Pay</label>
 										<input name="pay" type="number" value="3.2">
+										<button class="swap-tab__swap"></button>
 									</div>
 									<select class="swap-tab__currency" name="pay-currency">
 										<option value="eth" style="display: none;">eth</option>
+										<option value="weth">weth</option>
 										<option value="usdt">usdt</option>
 										<option value="btc">btc</option>
 									</select>
@@ -114,29 +115,123 @@
 									</div>
 									<select class="swap-tab__currency" name="get-currency">
 										<option value="eth" style="display: none;">eth</option>
+										<option value="weth">weth</option>
 										<option value="usdt">usdt</option>
 										<option value="btc">btc</option>
 									</select>
 								</div>
 							</div>
-							<button class="swap-tab__submit" type="submit">Byu now</button>
+							<button class="swap-tab__submit" type="submit"><span>Byu now</span></button>
 						</form>
 						<form class="swap-left__tab swap-tab" action="#" data-tab="2">
 							<div class="swap-tab__value">
-								<div class="swap-tab__inbox">
-									<label>Sell</label>
-									<input name="pay" type="number" value="3.2">
+								<div class="swap-tab__col">
+									<div class="swap-tab__inbox">
+										<label>Pay</label>
+										<input name="pay" type="number" value="3.2">
+										<button class="swap-tab__swap"></button>
+									</div>
+									<select class="swap-tab__currency" name="pay-currency">
+										<option value="eth" style="display: none;">eth</option>
+										<option value="weth">weth</option>
+										<option value="usdt">usdt</option>
+										<option value="btc">btc</option>
+									</select>
 								</div>
-								<div class="swap-tab__inbox">
-									<label>Get</label>
-									<input name="get" type="number" value="64.632">
+								<div class="swap-tab__col">
+									<div class="swap-tab__inbox">
+										<label>Get</label>
+										<input name="get" type="number">
+									</div>
+									<select class="swap-tab__currency" name="get-currency">
+										<option value="eth" style="display: none;">eth</option>
+										<option value="weth">weth</option>
+										<option value="usdt">usdt</option>
+										<option value="btc">btc</option>
+									</select>
 								</div>
-								<button class="swap-tab__swap"></button>
 							</div>
-							<button class="swap-tab__submit" type="submit">Sell now</button>
+							<button class="swap-tab__submit" type="submit"><span>Sell now</span></button>
 						</form>
 					</div>
-					<div class="main-swap__right"></div>
+					<div class="main-swap__right swap-right">
+						<div class="swap-right__adress">
+							<p>
+								0x0a41e6d4d4897e8cec819ce7d10b2d7cda61dc94
+							</p>
+							<button><span>Copy adress</span></button>
+						</div>
+						<div class="swap-right__content _active" data-tab="1">
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Tutorial</p></div>
+								<div class="swap-right__link"><a href="#">Watch here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Audit</p></div>
+								<div class="swap-right__link"><a href="#">Read here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Buy on Dextools</p></div>
+								<div class="swap-right__link swap-right__link_ibg"><a href="#"></a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Token tracker</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Price Charts</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+						</div>
+						<div class="swap-right__content" data-tab="2">
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Tutorial2</p></div>
+								<div class="swap-right__link"><a href="#">Watch here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Audit</p></div>
+								<div class="swap-right__link"><a href="#">Read here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Buy on Dextools</p></div>
+								<div class="swap-right__link swap-right__link_ibg"><a href="#"></a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Token tracker</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Price Charts</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+						</div>
+						<div class="swap-right__content" data-tab="3">
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Tutorial2</p></div>
+								<div class="swap-right__link"><a href="#">Watch here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Audit</p></div>
+								<div class="swap-right__link"><a href="#">Read here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Buy on Dextools</p></div>
+								<div class="swap-right__link swap-right__link_ibg"><a href="#"></a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Token tracker</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Price Charts</p></div>
+								<div class="swap-right__link"><a href="#">View here</a></div>
+							</div>
+							<div class="swap-right__row">
+								<div class="swap-right__name"><p>Staking contract</p></div>
+								<div class="swap-right__link swap-right__link_adress"><a href="#">0x0a41e6d4d4897e8cec819ce7d10b2d7cda61dc94</a></div>
+							</div>
+						</div>
+					</div>
 				</div>
 				<p class="swap__advise">
 					*We advise reviewing our <a href="#">Whitepaper</a> before making any investments.
