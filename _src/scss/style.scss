@@ -69,6 +69,77 @@ body {
 	text-transform: uppercase;
 }
 
+body._dark {
+
+	.main-menu__item {
+
+		&._active > a,
+		& > a:hover {
+			color: #051d23;
+		}
+
+		&._scroll {
+
+			&._active > a,
+			& > a:hover {
+				color: #fff;
+			}
+		}
+	}
+
+	.main-nav__join {
+		background: #06242b;
+		color: #15dde3;
+		border-color: #15dde3;
+
+		&:hover {
+			color: #06242b;
+			background: #15dde3;
+			border-color: #15dde3;
+		}
+	}
+	
+	.main-nav__burger {
+
+		& span,
+		&::before,
+		&::after {
+			background: #051d23;
+		}
+
+		&._scroll {
+
+			& span,
+			&::before,
+			&::after {
+				background: #fff;
+			}
+		}
+	}
+
+	.main-nav__logo {
+
+		& .light {
+			display: none;
+		}
+
+		& .dark {
+			display: block;
+		}
+
+		&._scroll {
+
+			& .light {
+				display: block;
+			}
+
+			& .dark {
+				display: none;
+			}
+		}
+	}
+}
+
 h1 {
 	font-family: 'MonumentExtended', sans-serif;
 	font-size: 73px;
@@ -121,6 +192,29 @@ h2 {
 	.scroll-top {
 		display: block;
 	}
+
+	body._dark {
+
+		.main-menu__item {
+	
+			&._active > a,
+			& > a:hover {
+				color: #fff;
+			}
+		}
+	
+		// .main-nav__join {
+		// 	background: #06242b;
+		// 	color: #15dde3;
+		// 	border-color: #15dde3;
+	
+		// 	&:hover {
+		// 		color: #06242b;
+		// 		background: #15dde3;
+		// 		border-color: #15dde3;
+		// 	}
+		// }
+	}
 }
 
 @media (max-width: 600px) {
@@ -168,6 +262,10 @@ h2 {
 		margin-right: 50px;
 		z-index: 100;
 
+		& .dark {
+			display: none;
+		}
+
 		& img {
 			width: 100%;
 			height: 100%;
@@ -209,28 +307,6 @@ h2 {
 
 	&__burger {
 		display: none;
-	}
-
-	&_dark {
-
-		.main-menu__item._active a {
-			color: #051d23;
-		}
-		
-		.main-nav__burger span,
-		.main-nav__burger::before,
-		.main-nav__burger::after {
-			background: #051d23;
-		}
-
-		.main-nav__burger._scroll {
-
-			.main-nav__burger span,
-			.main-nav__burger::before,
-			.main-nav__burger::after {
-				background: #fff;
-			}
-		}
 	}
 }
 
@@ -1252,8 +1328,13 @@ h2 {
 			background: none;
 	
 			& a {
+				display: inline-flex;
 				width: 25px;
 				height: 20px;
+			}
+
+			& a._order {
+				order: -1;
 			}
 		}
 	}
@@ -1861,13 +1942,13 @@ h2 {
 		width: 235px;
 		height: 56px;
 		padding: 10px;
-		background: $l-blue;
-		color: #051d23;
+		background: #31c4e180;
+		color: #fff;
 		font-size: 18px;
 		line-height: 1.2;
 		font-weight: 600;
 		text-transform: none;
-		border: 1px solid #fff;
+		border: 1px solid #19d6fa;
 		border-radius: 3px;
 		transition: all linear 0.2s;
 
@@ -2141,6 +2222,10 @@ h2 {
 		& strong {
 			font-weight: 700;
 		}
+
+		& span {
+			color: $l-blue;
+		}
 	}
 
 	&__button {
@@ -2386,7 +2471,7 @@ h2 {
 	padding: 45px 35px;
 
 	&_check {
-		background: #2a7a9080;
+		background: #2a7a9047;
 		border: 1px solid #4396ab;
 	}
 
@@ -4519,6 +4604,7 @@ h2 {
 
 		& strong {
 			color: $l-blue;
+			font-weight: 400;
 		}
 	}
 }
@@ -4650,6 +4736,112 @@ h2 {
 	
 		&__text {
 			font-size: 14px;
+		}
+	}
+}
+
+//<=============================================================== BENEFITS ===============================================================>\\
+
+.benefits {
+	background: #061d24;
+	min-height: 100vh;
+
+	&__cont {
+		padding-top: 108px;
+	}
+
+	&__top {
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		font-family: 'MonumentExtended';
+		font-weight: 400;
+		font-size: 37px;
+		line-height: 1.16;
+		border-bottom: 5px;
+		text-transform: none;
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 1.82;
+		color: #96acb2;
+		text-transform: none;
+	}
+
+	&__table {
+	}
+}
+
+.table-benefits {
+	display: flex;
+	column-gap: 5px;
+	max-width: 1150px;
+	margin: 0 auto;
+
+	&__row {
+		width: calc(14.28% - 4px);
+
+		&_big {
+			width: calc(42.84% - 4px);
+		}
+
+		&_big .table-benefits__column {
+			font-size: 16px;
+			line-height: 1.56;
+			align-items: flex-start;
+		}
+
+		&_big .table-benefits__column_heading {
+			align-items: flex-start;
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 1.54;
+			color: #14d9df;
+		}
+	}
+
+	&__border {
+		border: 1px solid #fff;
+	}
+
+	&__hover {
+		border: 1px solid #fff;
+	}
+
+	&__column {
+		display: inline-flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-transform: none;
+		color: #b8c9ce;
+		height: 50px;
+		width: 100%;
+
+		&_heading {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 75px;
+			width: 100%;
+			margin-bottom: 5px;
+			background: #0d303ba8;
+			border: 1px solid #1b5465;
+			border-radius: 5px;
+			padding: 10px 25px;
+			text-transform: none;
+		}
+
+		&_action {
+		}
+
+		& span {
+		}
+		
+		& span.check {
 		}
 	}
 }
