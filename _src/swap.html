@@ -38,7 +38,7 @@
 							<li data-tab="2">SELL</li>
 							<li data-tab="3">STAKE</li>
 						</ul>
-						<form class="swap-left__tab swap-tab _active" action="#" data-tab="1">
+						<form class="swap-left__tab swap-tab" action="#" data-tab="1">
 							<div class="swap-tab__value">
 								<div class="swap-tab__col">
 									<div class="swap-tab__inbox">
@@ -98,6 +98,134 @@
 							</div>
 							<button class="swap-tab__submit" type="submit"><span>Sell now</span></button>
 						</form>
+						<div data-tab="3">
+							<form class="swap-left__tab swap-tab swap-tab_stake _active" action="#">
+								<div class="swap-tab__stake swap-stake">
+									<p class="swap-stake__period">select locking period (days)</p>
+									<div class="swap-stake__box">
+										<div class="swap-stake__radio">
+											<p>30</p>
+											<input type="radio" name="period">
+										</div>
+										<div class="swap-stake__radio">
+											<p>60</p>
+											<input type="radio" name="period">
+										</div>
+										<div class="swap-stake__radio">
+											<p>180</p>
+											<input type="radio" name="period">
+										</div>
+										<div class="swap-stake__radio _disable"></div>
+									</div>
+									<p class="swap-stake__percent">APY: <strong>10%</strong></p>
+									<div class="swap-stake__value">
+										<div class="swap-stake__value-box">
+											<button class="swap-stake__plus">+</button>
+											<div class="swap-stake__inbox">
+												<label>SYK</label>
+												<input type="number" name="stake-value">
+												<button>Max</button>
+											</div>
+											<button class="swap-stake__minus">-</button>
+										</div>
+										<div class="swap-stake__value-sum">
+											<button>0</button>
+											<button>1.000</button>
+											<button>10.000</button>
+											<button>max</button>
+										</div>
+									</div>
+									<button class="swap-stake__submit" type="submit">Stake</button>
+									<p class="swap-stake__reward">View <a href="#">staking rewards</a></p>
+								</div>
+							</form>
+							<form class="swap-left__tab swap-tab swap-tab_stake _active" action="#">
+								<div class="swap-tab__deposits swap-deposits">
+									<p class="swap-deposits__title">your deposits</p>
+									<ul class="swap-deposits__tab-menu">
+										<li class="_active" data-tab="1">01</li>
+										<li data-tab="2">02</li>
+										<li data-tab="3">03</li>
+										<li data-tab="4">04</li>
+										<li data-tab="5">05</li>
+									</ul>
+									<div class="swap-deposits__tab-item _active" data-tab="1">
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">Staked:</p>
+											<p class="swap-deposits__value">100.000 SYC</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">redeem in:</p>
+											<p class="swap-deposits__value swap-deposits__value_unlock">redeem now</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">earnings:</p>
+											<p class="swap-deposits__value">10SYC</p>
+										</div>
+									</div>
+									<div class="swap-deposits__tab-item" data-tab="2">
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">Staked:</p>
+											<p class="swap-deposits__value">10.000 SYC</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">redeem in:</p>
+											<p class="swap-deposits__value swap-deposits__value_unlock">redeem now</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">earnings:</p>
+											<p class="swap-deposits__value">5SYC</p>
+										</div>
+									</div>
+									<div class="swap-deposits__tab-item" data-tab="3">
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">Staked:</p>
+											<p class="swap-deposits__value">700.000 SYC</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">redeem in:</p>
+											<p class="swap-deposits__value swap-deposits__value_lock">blocked</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">earnings:</p>
+											<p class="swap-deposits__value">10SYC</p>
+										</div>
+									</div>
+									<div class="swap-deposits__tab-item" data-tab="4">
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">Staked:</p>
+											<p class="swap-deposits__value">300.000 SYC</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">redeem in:</p>
+											<p class="swap-deposits__value swap-deposits__value_unlock">redeem now</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">earnings:</p>
+											<p class="swap-deposits__value">10SYC</p>
+										</div>
+									</div>
+									<div class="swap-deposits__tab-item" data-tab="5">
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">Staked:</p>
+											<p class="swap-deposits__value">900.000 SYC</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">redeem in:</p>
+											<p class="swap-deposits__value swap-deposits__value_unlock">redeem now</p>
+										</div>
+										<div class="swap-deposits__col">
+											<p class="swap-deposits__name">earnings:</p>
+											<p class="swap-deposits__value">17SYC</p>
+										</div>
+									</div>
+									<div class="swap-deposits__submit">
+										<p>early unstake fee: 30%</p>
+										<button class="swap-stake__submit" type="submit">Redeem</button>
+									</div>
+								</div>
+							</form>
+						</div>
 					</div>
 					<div class="main-swap__right swap-right">
 						<div class="swap-right__adress">

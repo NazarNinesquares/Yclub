@@ -93,4 +93,25 @@ if($('.swap-right__link_adress').length) {
 	$('.swap-right__link_adress a').text(text1 + '..' + text2)
 }
 
+$.each($('.swap-stake__radio'), function() {
+	if($(this).find('input').prop('checked')==true) {
+		$(this).addClass('_active');
+	}
+})
+
+$('.swap-stake__radio').on('click', function () {
+	$('.swap-stake__radio').removeClass('_active');
+	$('.swap-stake__radio input').prop('checked', false);
+	$(this).toggleClass('_active');
+	$(this).find('input').prop('checked', true);
+})
+
+$('.swap-deposits__tab-menu li').on('click', function () {
+	
+	$('.swap-deposits__tab-menu li').removeClass('_active');
+	$(this).addClass('_active');
+	$('.swap-deposits__tab-item').removeClass('_active');
+	$('.swap-deposits__tab-item[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
+})
+
 });
