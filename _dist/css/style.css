@@ -4228,6 +4228,21 @@ h2 {
     height: 45px;
   }
 
+  .swap-stake__radio p {
+    font-size: 14px;
+  }
+
+  .swap-deposits__tab-menu {
+    -webkit-column-gap: 15px;
+       -moz-column-gap: 15px;
+            column-gap: 15px;
+  }
+
+  .swap-deposits__tab-menu li {
+    width: calc(20% - 12px);
+    height: 40px;
+  }
+
   .chart::before {
     height: 140px;
     top: -5%;
