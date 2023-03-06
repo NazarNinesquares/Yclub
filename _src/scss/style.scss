@@ -34,7 +34,6 @@
 	font-display: swap;
 }
 
-
 // Змінна font-family
 $ff: 'Montserrat', sans-serif;
 
@@ -282,6 +281,7 @@ h2 {
 
 	&__menu {
 		margin-right: 30px;
+		flex: 1 1 auto;
 	}
 
 	&__join {
@@ -551,7 +551,7 @@ h2 {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			padding-top: 70px;
+			padding-top: 120px;
 			padding-bottom: 30px;
 			flex-direction: column;
 			background: #1f4b5a;
@@ -564,6 +564,7 @@ h2 {
 		}
 	
 		&__menu {
+			flex: 0 1 auto;
 			padding-right: 0;
 			margin-right: 0;
 			margin-bottom: 30px;
@@ -1377,11 +1378,13 @@ h2 {
 		}
 
 		&_3 {
-			width: calc(17.6% - 75px);
+			// width: calc(17.6% - 75px);
+			width: calc(33.7% - 75px);
 		}
 
 		&_4 {
-			width: calc(33.7% - 75px);
+			// width: calc(33.7% - 75px);
+			width: calc(17.6% - 75px);
 		}
 
 		& img {
@@ -1432,11 +1435,13 @@ h2 {
 			}
 	
 			&_3 {
-				width: calc(17.1% - 45px);
+				// width: calc(17.1% - 45px);
+				width: calc(35.4% - 45px);
 			}
 	
 			&_4 {
-				width: calc(35.4% - 45px);
+				// width: calc(35.4% - 45px);
+				width: calc(17.1% - 45px);
 			}
 		}
 	}
@@ -1466,11 +1471,13 @@ h2 {
 			}
 	
 			&_3 {
-				width: calc(17.1% - 30px);
+				// width: calc(17.1% - 30px);
+				width: calc(35.4% - 30px);
 			}
 	
 			&_4 {
-				width: calc(35.4% - 30px);
+				// width: calc(35.4% - 30px);
+				width: calc(26.25% - 30px);
 			}
 		}
 	}
@@ -1496,11 +1503,13 @@ h2 {
 			}
 	
 			&_3 {
-				width: calc(17.1% - 15px);
+				// width: calc(17.1% - 15px);
+				width: calc(35.4% - 15px);
 			}
 	
 			&_4 {
-				width: calc(35.4% - 15px);
+				// width: calc(35.4% - 15px);
+				width: calc(17.1% - 15px);
 			}
 		}
 	}
@@ -1530,11 +1539,13 @@ h2 {
 			}
 	
 			&_3 {
-				width: calc(17.1% - 9px);
+				// width: calc(17.1% - 9px);
+				width: calc(35.4% - 9px);
 			}
 	
 			&_4 {
-				width: calc(35.4% - 9px);
+				// width: calc(35.4% - 9px);
+				width: calc(17.1% - 9px);
 			}
 		}
 	}
@@ -1935,6 +1946,14 @@ h2 {
 		}
 	}
 
+	&__text {
+		font-size: 18px;
+		line-height: 1.2;
+		max-width: 800px;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
+
 	&__button {
 		display: inline-flex;
 		justify-content: center;
@@ -2080,6 +2099,12 @@ h2 {
 	
 		&__ibox {
 			padding-bottom: 70%;
+		}
+
+		&__text {
+			font-size: 14px;
+			max-width: 500px;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -2397,6 +2422,7 @@ h2 {
 			opacity: 0.4;
 			cursor: pointer;
 			transition: all linear 0.2s;
+			pointer-events: none;
 		}
 
 		& li::before {
@@ -2413,6 +2439,7 @@ h2 {
 			font-size: 20px;
 			padding: 0 20px 6px;
 			opacity: 1;
+			pointer-events: all;
 		}
 	}
 
@@ -3927,15 +3954,10 @@ h2 {
 
 	&__tab {
 		flex: 1 1 auto;
-		display: none;
 		background: #0c2229;
 		border: 1px solid #17716e;
 		padding: 50px 40px;
 		border-radius: 0 0 5px 5px;
-
-		&._active {
-			display: block;
-		}
 	}
 }
 
@@ -4127,6 +4149,11 @@ h2 {
 }
 
 .swap-tab {
+	display: none;
+
+	&._active {
+		display: block;
+	}
 
 	&__value {
 		position: relative;
@@ -5066,7 +5093,7 @@ h2 {
 	}
 }
 
-//<=============================================================== BENEFITS ===============================================================>\\
+//<############################################################### BENEFITS ###############################################################>\\
 
 .benefits {
 	background: #061d24;
@@ -5251,26 +5278,6 @@ h2 {
 		& span.check {
 			background: url(../img/home/roadmap/home-roadmap-02.png) center/contain no-repeat;
 		}
-
-		&_lvl1 {
-			color: #238487;
-			background: #0d303b!important;
-		}
-
-		&_lvl2 {
-			color: #2aa2a6;
-			background: #0b2e3a!important;
-		}
-
-		&_lvl3 {
-			color: #2fc8cd;
-			background: #0e3543!important;
-		}
-
-		&_lvl4 {
-			color: #17d9df;
-			background: #0f4457!important;
-		}
 	}
 
 	&__row {
@@ -5308,6 +5315,26 @@ h2 {
 			text-align: left;
 		}
 	}
+}
+
+.table-benefits__row .table-benefits__column_lvl1 {
+	background: #0d303b;
+	color: #23a5ab;
+}
+
+.table-benefits__row .table-benefits__column_lvl2 {
+	background: #0b2e3a;
+	color: #2dd0d4;
+}
+
+.table-benefits__row .table-benefits__column_lvl3 {
+	background: #0e3543;
+	color: #34edee;
+}
+
+.table-benefits__row .table-benefits__column_lvl4 {
+	background: #0f4457;
+	color: #18f3f5;
 }
 
 @media (max-width: 992px) {
