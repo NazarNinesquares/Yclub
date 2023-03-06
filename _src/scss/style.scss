@@ -1183,6 +1183,7 @@ h2 {
 		padding: 10px 15px;
 		background: #013f4a;
 		border-radius: 5px;
+		z-index: 5;
 
 		& a {
 			width: 18px;
@@ -2386,10 +2387,10 @@ h2 {
 //<=============================================================== ROADMAP ==============================================================>\\
 
 .roadmap {
-	background: url(../img/home/roadmap/home-roadmap-01.png) center/cover no-repeat;
+	background: url(../img/home/roadmap/home-roadmap-01.png) top/cover no-repeat;
 
 	&__cont {
-		padding-top: 185px;
+		padding-top: 270px;
 		padding-bottom: 80px;
 		min-height: 1860px;
 	}
@@ -3253,8 +3254,8 @@ h2 {
 		position: absolute;
 		top: 5px;
 		left: 18px;
-		width: 100%;
-		padding-bottom: 72%;
+		width: 90%;
+		padding-bottom: 52%;
 
 		& img {
 			position: absolute;
@@ -3892,6 +3893,7 @@ h2 {
 }
 
 .main-swap {
+	position: relative;
 	display: flex;
 	column-gap: 40px;
 	margin-bottom: 35px;
@@ -3910,6 +3912,60 @@ h2 {
 		border: 1px solid #17716e;
 		border-radius: 5px;
 		padding: 15px;
+	}
+
+	&__overlay {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 5;
+		background: #103136e5;
+		padding: 15px;
+
+		& p {
+			font-size: 20px;
+			text-align: center;
+			line-height: 1.5;
+			margin-bottom: 30px;
+			max-width: 960px;
+		}
+		
+		& a {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			height: 40px;
+			border-radius: 10px;
+			background: #21d3cf;
+			color: #051d23;
+			font-weight: 700;
+			font-size: 14px;
+			border: 1px solid #21d3cf;
+			padding: 5px 40px 5px 20px; 
+			transition: 0.2s linear;
+		}
+
+		& a::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 5px;
+			transform: translateY(-50%);
+			width: 40px;
+			height: 40px;
+			background: url(../img/swap/swap-5.svg) center/contain no-repeat;
+		}
+
+		& a:hover {
+			background: #14918f;
+		}
 	}
 }
 
@@ -4791,6 +4847,18 @@ h2 {
 			}
 		}
 	}
+
+	.main-swap {
+
+		&__overlay {
+
+			& p {
+				font-size: 16px;
+				margin-bottom: 20px;
+				max-width: 770px;
+			}
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -4812,6 +4880,14 @@ h2 {
 	
 		&__right {
 			width: 100%;
+		}
+
+		&__overlay {
+
+			& p {
+				font-size: 14px;
+				margin-bottom: 20px;
+			}
 		}
 	}
 

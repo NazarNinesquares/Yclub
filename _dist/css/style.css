@@ -909,6 +909,7 @@ h2 {
   padding: 10px 15px;
   background: #013f4a;
   border-radius: 5px;
+  z-index: 5;
 }
 
 .mainscreen__social a {
@@ -1418,11 +1419,11 @@ h2 {
 }
 
 .roadmap {
-  background: url(../img/home/roadmap/home-roadmap-01.png) center/cover no-repeat;
+  background: url(../img/home/roadmap/home-roadmap-01.png) top/cover no-repeat;
 }
 
 .roadmap__cont {
-  padding-top: 185px;
+  padding-top: 270px;
   padding-bottom: 80px;
   min-height: 1860px;
 }
@@ -1963,8 +1964,8 @@ h2 {
   position: absolute;
   top: 5px;
   left: 18px;
-  width: 100%;
-  padding-bottom: 72%;
+  width: 90%;
+  padding-bottom: 52%;
 }
 
 .item-line__number img {
@@ -2119,6 +2120,7 @@ h2 {
 }
 
 .main-swap {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2142,6 +2144,79 @@ h2 {
   border: 1px solid #17716e;
   border-radius: 5px;
   padding: 15px;
+}
+
+.main-swap__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: #103136e5;
+  padding: 15px;
+}
+
+.main-swap__overlay p {
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 960px;
+}
+
+.main-swap__overlay a {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 40px;
+  border-radius: 10px;
+  background: #21d3cf;
+  color: #051d23;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid #21d3cf;
+  padding: 5px 40px 5px 20px;
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.main-swap__overlay a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: url(../img/swap/swap-5.svg) center/contain no-repeat;
+}
+
+.main-swap__overlay a:hover {
+  background: #14918f;
 }
 
 .swap-left {
@@ -4265,6 +4340,12 @@ h2 {
     height: 40px;
   }
 
+  .main-swap__overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 770px;
+  }
+
   .chart::before {
     height: 140px;
     top: -5%;
@@ -5240,6 +5321,11 @@ h2 {
 
   .main-swap__right {
     width: 100%;
+  }
+
+  .main-swap__overlay p {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
 
   .top-swap__title {
