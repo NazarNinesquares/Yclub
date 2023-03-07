@@ -326,31 +326,41 @@ h2 {
 
 		&_parent {
 			position: relative;
+			display: inline-flex;
+			align-items: center;
 		}
 	
 		&_parent > a {
 			position: relative;
+			margin-right: 5px;
 			z-index: 2;
 	
-			&::before {
-				content: "";
-				position: absolute;
-				top: 50%;
-				right: -10px;
-				transform: translateY(-50%);
-				width: 6px;
-				height: 3px;
-				background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
-				transition: .2s linear;
-				z-index: 2;
-			}
+			// &::before {
+			// 	content: "";
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	right: -10px;
+			// 	transform: translateY(-50%);
+			// 	width: 6px;
+			// 	height: 3px;
+			// 	background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
+			// 	transition: .2s linear;
+			// 	z-index: 2;
+			// }
 		}
 
-		&_parent._active > a {
-	
-			&::before {
-				transform: translateY(-50%)rotate(-180deg);
-			}
+		&_parent > span {
+			position: relative;
+			display: inline-block;
+			width: 6px;
+			height: 3px;
+			background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
+			transition: 0.2s linear;
+			z-index: 2;
+		}
+
+		&_parent._active > span {
+			transform: rotate(-180deg);
 		}
 
 		& a {
@@ -594,17 +604,33 @@ h2 {
 			& a {
 				font-size: 16px;
 			}
-	
-			&_parent > a {
-		
-				&::before {
-					right: -30px;
-					width: 20px;
-					height: 20px;
-					background: url(../img/home/header/home-header-01.png) center/10px 5px no-repeat, #011c2b;
-					border-radius: 50%;
-				}
+
+			&_parent {
+				justify-content: center;
+				flex-wrap: wrap;
 			}
+		
+			&_parent > a {
+				margin-right: 10px;
+			}
+	
+			&_parent > span {
+				width: 20px;
+				height: 20px;
+				background: url(../img/home/header/home-header-01.png) center/10px 5px no-repeat, #011c2b;
+				border-radius: 50%;
+			}
+	
+			// &_parent > a {
+		
+			// 	&::before {
+			// 		right: -30px;
+			// 		width: 20px;
+			// 		height: 20px;
+			// 		background: url(../img/home/header/home-header-01.png) center/10px 5px no-repeat, #011c2b;
+			// 		border-radius: 50%;
+			// 	}
+			// }
 		}
 	
 		&__sub {
