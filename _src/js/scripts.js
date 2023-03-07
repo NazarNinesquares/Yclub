@@ -8,7 +8,7 @@ function windowSize(ma) {
 	if ((ma && ma.matches) || $(window).width() <= 768) {
 		$('.main-menu__item_parent > span').on('click', function() {
 			$('.main-menu__sub').not($(this).parent().find('.main-menu__sub')).hide();
-			$('.main-menu__item_parent > span').not($(this)).removeClass('_active');
+			$('.main-menu__item_parent > span').not(this).removeClass('_active');
 			$(this).toggleClass('_active');
 			$(this).parent().find('.main-menu__sub').toggle();
 			$(this).parent().toggleClass('_active');
@@ -118,4 +118,51 @@ $('.swap-deposits__tab-menu li').on('click', function () {
 	$('.swap-deposits__tab-item[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
 })
 
+	$('a._anchor').on('click', function (e) {
+		
+		if($('section' + '.' + $(this).data('anchor')).length) {
+			e.preventDefault()
+			e.stopPropagation()
+			$('html').animate({scrollTop: $('.' + $(this).data('anchor')).offset().top - $('.header').height() }, 500);
+		} else {
+			
+		}
+	})
+
+	// let master_name = location.pathname.split('/artists/')[1].split('/')[0]
+	// let current_tab = sessionStorage.getItem(master_name);
+
+	// $('.tab-toggle__btn').on('click', function () {
+	// 	 sessionStorage.setItem(master_name, $(this).attr('data-tab'))
+	// })
+
+	// if(current_tab !== null) {
+
+	// 	 $('.tab-toggle__btn').removeClass('active');
+	// 	 $('.tab-toggle__btn[data-tab="'+ current_tab +'"]').trigger('click');
+	// }
+
+
 });
+
+// // отримуємо всі посилання на сторінці
+// let links = $('a._anchor');
+
+// // перебираємо посилання
+// links.each(link => {
+// 	// встановлюємо обробник подій для кожного посилання
+// 	$(link).on('click', e => {
+// 		// перевіряємо, чи знаходиться користувач на головній сторінці
+// 		if (window.location.pathname === '/') {
+// 			// отримуємо ідентифікатор блоку, на який вказує посилання
+// 			let target = $(link).data('anchor');
+// 			// прокручуємо до відповідного блоку з анімацією
+// 			$('html').animate({scrollTop: $(target).offset().top - $('.header').height() }, 500);
+// 		} else {
+// 			// перенаправляємо користувача на головну сторінку з анімацією
+// 			// e.preventDefault();
+// 			// window.location.href = '/';
+// 			// document.querySelector(link.getAttribute('data-anchor')).scrollIntoView({ behavior: 'smooth' });
+// 		}
+// 	});
+// });
