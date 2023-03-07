@@ -2393,7 +2393,8 @@ h2 {
 	&__cont {
 		padding-top: 270px;
 		padding-bottom: 80px;
-		min-height: 1860px;
+		// min-height: 1860px;
+		min-height: 2425px;
 	}
 
 	&__top {
@@ -2569,6 +2570,16 @@ h2 {
 	}
 }
 
+@media (max-width: 1440px) {
+
+	.roadmap {
+	
+		&__cont {
+			min-height: 1860px;
+		}
+	}
+}
+
 @media (max-width: 1300px) {
 
 	.roadmap {
@@ -2576,7 +2587,7 @@ h2 {
 		&__cont {
 			padding-top: 160px;
 			padding-bottom: 50px;
-			min-height: 1580px;
+			min-height: 1650px;
 		}
 	}
 	
@@ -2680,7 +2691,7 @@ h2 {
 	
 		&__cont {
 			padding-bottom: 30px;
-			min-height: 1206px;
+			min-height: 1260px;
 		}
 	}
 	
