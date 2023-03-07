@@ -341,7 +341,7 @@ h2 {
 				width: 6px;
 				height: 3px;
 				background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
-				transition: all linear 0.2s;
+				transition: .2s linear;
 				z-index: 2;
 			}
 		}
@@ -593,6 +593,17 @@ h2 {
 	
 			& a {
 				font-size: 16px;
+			}
+	
+			&_parent > a {
+		
+				&::before {
+					right: -30px;
+					width: 20px;
+					height: 20px;
+					background: url(../img/home/header/home-header-01.png) center/10px 5px no-repeat, #011c2b;
+					border-radius: 50%;
+				}
 			}
 		}
 	
@@ -1787,11 +1798,11 @@ h2 {
 	&::before {
 		content: "";
 		position: absolute;
-		top: -4%;
+		top: -9%;
 		left: 0;
 		width: 100%;
-		height: 210px;
-		background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+		height: 265px;
+		background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
 	}
 
 	&__cont {
@@ -1986,6 +1997,7 @@ h2 {
 	.mission {
 	
 		&::before {
+			top: -7%;
 			height: 180px;
 		}
 	
@@ -2061,7 +2073,7 @@ h2 {
 	
 		&::before {
 			height: 140px;
-			top: -3%;
+			top: -5%;
 		}
 	
 		&__industry {
@@ -2116,6 +2128,7 @@ h2 {
 	.mission {
 	
 		&::before {
+			top: -3.5%;
 			height: 105px;
 		}
 	}
@@ -2201,11 +2214,13 @@ h2 {
 	&::before {
 		content: "";
 		position: absolute;
-		top: -5%;
+		top: -15%;
 		left: 0;
 		width: 100%;
-		height: 124px;
-		background: url(../img/home/charters/home-charters-2.png) center left/cover no-repeat;
+		height: 265px;
+		// background: url(../img/home/charters/home-charters-2.png) center left/cover no-repeat;
+		background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
+		transform: rotate(180deg);
 	}
 
 	&__cont {
@@ -2284,8 +2299,8 @@ h2 {
 	.charters {
 
 		&::before {
-			top: -6%;
-			height: 115px;
+			top: -10%;
+			height: 175px;
 		}
 	
 		&__subtitle {
@@ -2307,6 +2322,10 @@ h2 {
 
 	.charters {
 
+		&::before {
+			top: -11%;
+		}
+
 		&__content {
 			padding-bottom: 60%;
 		}
@@ -2322,8 +2341,8 @@ h2 {
 	.charters {
 
 		&::before {
-			top: -5%;
-			height: 70px;
+			top: -7%;
+			height: 110px;
 		}
 
 		&__cont {
@@ -3266,8 +3285,8 @@ h2 {
 		position: absolute;
 		top: 5px;
 		left: 18px;
-		width: 90%;
-		padding-bottom: 52%;
+		width: 50%;
+		padding-bottom: 68%;
 
 		& img {
 			position: absolute;
@@ -4943,11 +4962,11 @@ h2 {
 	&::before {
 		content: "";
 		position: absolute;
-		top: -9%;
+		top: -12%;
 		left: 0;
 		width: 100%;
-		height: 210px;
-		background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+		height: 265px;
+		background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
 	}
 
 	&__cont {
@@ -5055,7 +5074,7 @@ h2 {
 	.chart {
 	
 		&::before {
-			top: -6%;
+			top: -10%;
 			height: 180px;
 		}
 	
@@ -5072,7 +5091,7 @@ h2 {
 	
 		&::before {
 			height: 140px;
-			top: -5%;
+			top: -10%;
 		}
 	
 		&__cont {
@@ -5130,7 +5149,7 @@ h2 {
 	
 		&::before {
 			height: 105px;
-			top: -4%;
+			top: -6%;
 		}
 	}
 	

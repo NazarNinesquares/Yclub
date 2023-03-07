@@ -381,9 +381,9 @@ h2 {
   width: 6px;
   height: 3px;
   background: url(../img/home/header/home-header-01.png) center/contain no-repeat;
-  -webkit-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
+  -webkit-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  transition: 0.2s linear;
   z-index: 2;
 }
 
@@ -1111,11 +1111,11 @@ h2 {
 .mission::before {
   content: "";
   position: absolute;
-  top: -4%;
+  top: -9%;
   left: 0;
   width: 100%;
-  height: 210px;
-  background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+  height: 265px;
+  background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
 }
 
 .mission__cont {
@@ -1333,11 +1333,14 @@ h2 {
 .charters::before {
   content: "";
   position: absolute;
-  top: -5%;
+  top: -15%;
   left: 0;
   width: 100%;
-  height: 124px;
-  background: url(../img/home/charters/home-charters-2.png) center left/cover no-repeat;
+  height: 265px;
+  background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .charters__cont {
@@ -1965,8 +1968,8 @@ h2 {
   position: absolute;
   top: 5px;
   left: 18px;
-  width: 90%;
-  padding-bottom: 52%;
+  width: 50%;
+  padding-bottom: 68%;
 }
 
 .item-line__number img {
@@ -3072,11 +3075,11 @@ h2 {
 .chart::before {
   content: "";
   position: absolute;
-  top: -9%;
+  top: -12%;
   left: 0;
   width: 100%;
-  height: 210px;
-  background: url(../img/home/mission/home-mission-1.png) center right/cover no-repeat;
+  height: 265px;
+  background: url(../img/home/mission/home-mission-1.svg) center right/cover no-repeat;
 }
 
 .chart__cont {
@@ -3619,6 +3622,7 @@ h2 {
   }
 
   .mission::before {
+    top: -7%;
     height: 180px;
   }
 
@@ -3677,8 +3681,8 @@ h2 {
   }
 
   .charters::before {
-    top: -6%;
-    height: 115px;
+    top: -10%;
+    height: 175px;
   }
 
   .charters__subtitle {
@@ -3918,7 +3922,7 @@ h2 {
   }
 
   .chart::before {
-    top: -6%;
+    top: -10%;
     height: 180px;
   }
 
@@ -4053,7 +4057,7 @@ h2 {
 
   .mission::before {
     height: 140px;
-    top: -3%;
+    top: -5%;
   }
 
   .mission__industry {
@@ -4094,6 +4098,10 @@ h2 {
     font-size: 14px;
     max-width: 500px;
     margin-bottom: 20px;
+  }
+
+  .charters::before {
+    top: -11%;
   }
 
   .charters__content {
@@ -4355,7 +4363,7 @@ h2 {
 
   .chart::before {
     height: 140px;
-    top: -5%;
+    top: -10%;
   }
 
   .chart__cont {
@@ -4581,6 +4589,14 @@ h2 {
 
   .main-menu__item a {
     font-size: 16px;
+  }
+
+  .main-menu__item_parent > a::before {
+    right: -30px;
+    width: 20px;
+    height: 20px;
+    background: url(../img/home/header/home-header-01.png) center/10px 5px no-repeat, #011c2b;
+    border-radius: 50%;
   }
 
   .main-menu__sub {
@@ -4811,6 +4827,7 @@ h2 {
   }
 
   .mission::before {
+    top: -3.5%;
     height: 105px;
   }
 
@@ -4890,8 +4907,8 @@ h2 {
   }
 
   .charters::before {
-    top: -5%;
-    height: 70px;
+    top: -7%;
+    height: 110px;
   }
 
   .charters__cont {
@@ -5345,7 +5362,7 @@ h2 {
 
   .chart::before {
     height: 105px;
-    top: -4%;
+    top: -6%;
   }
 
   .top-chart__logo {
