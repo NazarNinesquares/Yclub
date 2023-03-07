@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 
 	if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined) {
-		
+
 		setTimeout(function() {
-			$('html').animate({scrollTop: $('.' + sessionStorage.getItem('anchor')).offset().top - $('.header').height() }, 1000);
+			$('html').animate({scrollTop: $('#' + sessionStorage.getItem('anchor')).offset().top - $('.header').height() }, 1000);
 			sessionStorage.removeItem('anchor')
 		},500)
 	}
@@ -130,12 +130,10 @@ $('a._anchor').on('click', function (e) {
 	e.preventDefault()
 	e.stopPropagation()
 
-	// let link = $(this).attr('href')
-
 	if (window.location.pathname === '/') {
-		$('html').animate({scrollTop: $('.' + $(this).data('anchor')).offset().top - $('.header').height() }, 500);
+		$('html').animate({scrollTop: $('#' + $(this).attr('href')).offset().top - $('.header').height() }, 500);
 	} else {
-		sessionStorage.setItem("anchor", $(this).data('anchor'));
+		sessionStorage.setItem("anchor", $(this).attr('href'));
 		window.location.pathname = '/'
 	}
 })
