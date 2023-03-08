@@ -3464,9 +3464,129 @@ h2 {
   color: #18f3f5;
 }
 
+.error {
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/error/error-1.png) center right/cover no-repeat;
+}
+
+.error__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1390px;
+  padding-top: calc(170px + 56 * (100vw - 375px) / 1545);
+}
+
+.error__number {
+  font-family: "MonumentExtended";
+  font-size: 216px;
+  font-weight: 400;
+  line-height: 1.19;
+  margin-right: 50px;
+}
+
+.error__info {
+  margin-top: 35px;
+}
+
+.error__title {
+  font-family: "MonumentExtended";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.19;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+
+.error__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: none;
+  max-width: 590px;
+  margin-bottom: 20px;
+}
+
+.error__link {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 139px;
+  height: 45px;
+  font-family: "MonumentExtended";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #051d23;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.error__link svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.error__link svg path {
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.error__link span {
+  position: relative;
+  z-index: 2;
+}
+
+.error__link:hover {
+  color: #fff;
+}
+
+.error__link:hover svg path {
+  fill: #123b48;
+}
+
 @media (max-width: 1440px) {
   .roadmap__cont {
     min-height: 1860px;
+  }
+
+  .error__cont {
+    max-width: 1085px;
+  }
+
+  .error__number {
+    font-size: 170px;
+    margin-right: 30px;
+  }
+
+  .error__info {
+    margin-top: 25px;
+  }
+
+  .error__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .error__text {
+    font-size: 13px;
+    max-width: 450px;
+    margin-bottom: 20px;
   }
 }
 
@@ -4483,6 +4603,30 @@ h2 {
   .table-benefits__row_big .table-benefits__column_heading {
     font-size: 18px;
   }
+
+  .error__number {
+    font-size: 120px;
+    margin-right: 20px;
+  }
+
+  .error__info {
+    margin-top: 15px;
+  }
+
+  .error__title {
+    font-size: 24px;
+  }
+
+  .error__text {
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
+
+  .error__link {
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -5417,6 +5561,33 @@ h2 {
   .main-chart__text {
     font-size: 14px;
   }
+
+  .error__cont {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .error__number {
+    font-size: 110px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .error__info {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .error__text {
+    max-width: 370px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -5722,5 +5893,27 @@ h2 {
 
   .swap-right__content {
     padding: 15px;
+  }
+
+  .error__number {
+    font-size: 100px;
+  }
+
+  .error__title {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .error__text {
+    font-size: 16px;
+    max-width: 325px;
+    margin: 0 auto;
+    margin-bottom: 28px;
+  }
+
+  .error__link {
+    width: 139px;
+    height: 45px;
+    font-size: 16px;
   }
 }

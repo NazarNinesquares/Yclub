@@ -19,17 +19,29 @@
 <body>
 
 <div class="wrapper">
-	@@include('_header.html')
 
 	<main class="main">
 		<section class="error">
 			<div class='error__cont _cont'>
-				
+				<div class="error__number">
+					<p>404</p>
+				</div>
+				<div class="error__info">
+					<p class="error__title">No yachts found in the port!</p>
+					<p class="error__text">
+						Due to some technical issues, this page is currently unavailable, but our stellar team is working hard to fix it.
+					</p>
+					<a class="error__link" href="index.html">
+						<svg viewBox="0 0 100 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M84.3719 0.5L99.5 8.79605V32.5H50H17.1242L0.5 23.699V0.5H50H84.3719Z" fill="#00F7FF" stroke="white"/>
+						</svg>
+						<span>To main</span>
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>
 
-	@@include('_footer.html')
 </div>
 
 	<script src="libs/jquery.js"></script>
