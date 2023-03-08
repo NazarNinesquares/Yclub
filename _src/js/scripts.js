@@ -1,12 +1,12 @@
 $( document ).ready(function() {
 
-	if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined) {
+if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != undefined) {
 
-		setTimeout(function() {
-			$('html').animate({scrollTop: $('#' + sessionStorage.getItem('anchor')).offset().top - $('.header').height() }, 1000);
-			sessionStorage.removeItem('anchor')
-		},500)
-	}
+	setTimeout(function() {
+		$('html').animate({scrollTop: $(sessionStorage.getItem('anchor')).offset().top - $('.header').height() }, 1000);
+		sessionStorage.removeItem('anchor')
+	},500)
+}
 
 $('<span></span>').insertAfter('.main-menu__item_parent a');
 
@@ -126,12 +126,12 @@ $('.swap-deposits__tab-menu li').on('click', function () {
 	$('.swap-deposits__tab-item[data-tab="' + $(this).data('tab') + '"]').addClass('_active');
 })
 
-$('a._anchor').on('click', function (e) {
+$('._anchor a').on('click', function (e) {
 	e.preventDefault()
 	e.stopPropagation()
 
 	if (window.location.pathname === '/') {
-		$('html').animate({scrollTop: $('#' + $(this).attr('href')).offset().top - $('.header').height() }, 500);
+		$('html').animate({scrollTop: $($(this).attr('href')).offset().top - $('.header').height() }, 500);
 	} else {
 		sessionStorage.setItem("anchor", $(this).attr('href'));
 		window.location.pathname = '/'

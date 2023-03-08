@@ -328,6 +328,7 @@ h2 {
 			position: relative;
 			display: inline-flex;
 			align-items: center;
+			justify-content: center;
 		}
 	
 		&_parent > a {
@@ -606,7 +607,6 @@ h2 {
 			}
 
 			&_parent {
-				justify-content: center;
 				flex-wrap: wrap;
 			}
 		
