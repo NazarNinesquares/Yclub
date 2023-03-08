@@ -10,10 +10,10 @@ if (window.location.pathname === '/' && sessionStorage.getItem('anchor') != unde
 
 $('<span></span>').insertAfter('.main-menu__item_parent a');
 
-window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
+window.matchMedia('(max-width: 1023px)').addEventListener('change', windowSize)
 
 function windowSize(ma) {
-	if ((ma && ma.matches) || $(window).width() <= 768) {
+	if ((ma && ma.matches) || $(window).width() <= 1023) {
 		$('.main-menu__item_parent > span').on('click', function() {
 			$('.main-menu__sub').not($(this).parent().find('.main-menu__sub')).hide();
 			$('.main-menu__item_parent > span').not(this).removeClass('_active');
@@ -131,6 +131,11 @@ $('._anchor a').on('click', function (e) {
 	e.stopPropagation()
 
 	if (window.location.pathname === '/') {
+
+		if($('.header').hasClass('_active')) {
+			$('.main-nav__burger').trigger('click');
+		}
+
 		$('html').animate({scrollTop: $($(this).attr('href')).offset().top - $('.header').height() }, 500);
 	} else {
 		sessionStorage.setItem("anchor", $(this).attr('href'));
