@@ -4112,12 +4112,13 @@ h2 {
 
 	&__overlay-btn {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		// justify-content: center;
 		flex-wrap: wrap;
 		gap: 20px;
 
-		& a {
+		& > a {
 			position: relative;
 			display: inline-flex;
 			align-items: center;
@@ -4133,7 +4134,7 @@ h2 {
 			transition: 0.2s linear;
 		}
 
-		& a::before {
+		& > a::before {
 			content: "";
 			position: absolute;
 			top: 50%;
@@ -4144,16 +4145,31 @@ h2 {
 			background: url(../img/swap/swap-5.svg) center/contain no-repeat;
 		}
 
-		& a:last-child {
+		& > a:last-child {
 			padding: 5px 20px 5px 20px; 
 		}
 		
-		& a:last-child::before {
+		& > a:last-child::before {
 			display: none;
 		}
 
-		& a:hover {
+		& > a:hover {
 			background: #14918f;
+		}
+
+		& p {
+			font-style: 14px;
+			text-transform: none;
+		}
+
+		& p a {
+			color: $l-blue;
+			text-decoration: underline;
+			text-underline-offset: 4px;
+		}
+
+		& p a:hover {
+			text-decoration: none;
 		}
 	}
 }

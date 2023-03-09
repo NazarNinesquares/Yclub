@@ -2195,18 +2195,19 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 20px;
 }
 
-.main-swap__overlay-btn a {
+.main-swap__overlay-btn > a {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -2230,7 +2231,7 @@ h2 {
   transition: 0.2s linear;
 }
 
-.main-swap__overlay-btn a::before {
+.main-swap__overlay-btn > a::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -2243,16 +2244,31 @@ h2 {
   background: url(../img/swap/swap-5.svg) center/contain no-repeat;
 }
 
-.main-swap__overlay-btn a:last-child {
+.main-swap__overlay-btn > a:last-child {
   padding: 5px 20px 5px 20px;
 }
 
-.main-swap__overlay-btn a:last-child::before {
+.main-swap__overlay-btn > a:last-child::before {
   display: none;
 }
 
-.main-swap__overlay-btn a:hover {
+.main-swap__overlay-btn > a:hover {
   background: #14918f;
+}
+
+.main-swap__overlay-btn p {
+  font-style: 14px;
+  text-transform: none;
+}
+
+.main-swap__overlay-btn p a {
+  color: #21d3cf;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.main-swap__overlay-btn p a:hover {
+  text-decoration: none;
 }
 
 .swap-left {
