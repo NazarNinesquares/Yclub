@@ -1249,7 +1249,9 @@ h2 {
           align-items: center;
   width: 157px;
   height: 48px;
-  background: #21d3cf;
+  background: -webkit-gradient(linear, left bottom, left top, from(#3bd2de), to(#20eeff));
+  background: -o-linear-gradient(bottom, #3bd2de 0%, #20eeff 100%);
+  background: linear-gradient(0deg, #3bd2de 0%, #20eeff 100%);
   color: #051d23;
   font-size: 16px;
   line-height: 1.2;

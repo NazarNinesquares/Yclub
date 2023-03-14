@@ -2058,7 +2058,8 @@ h2 {
 		align-items: center;
 		width: 157px;
 		height: 48px;
-		background: $l-blue;
+		// background: $l-blue;
+		background: linear-gradient(0deg, rgba(59,210,222,1) 0%, rgba(32,238,255,1) 100%);
 		color: #051d23;
 		font-size: 16px;
 		line-height: 1.2;
