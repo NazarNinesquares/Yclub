@@ -14,11 +14,13 @@ window.matchMedia('(max-width: 1023px)').addEventListener('change', windowSize)
 
 function windowSize(ma) {
 	if ((ma && ma.matches) || $(window).width() <= 1023) {
+
 		$('.main-menu__item_parent > span').on('click', function() {
+
 			$('.main-menu__sub').not($(this).parent().find('.main-menu__sub')).hide();
-			$('.main-menu__item_parent > span').not(this).removeClass('_active');
-			$(this).toggleClass('_active');
 			$(this).parent().find('.main-menu__sub').toggle();
+
+			$('.main-menu__item_parent').not($(this).parent()).removeClass('_active');
 			$(this).parent().toggleClass('_active');
 		})
 	} else {
