@@ -956,6 +956,9 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   gap: 100px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .partners__item {
