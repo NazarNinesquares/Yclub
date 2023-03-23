@@ -5907,3 +5907,132 @@ h2 {
 		}
 	}
 }
+
+//<################################################################ ARTICLE ###############################################################>\\
+
+//<================================================================ LOOKUP ================================================================>\\
+
+.lookup {
+
+	// .lookup__cont
+	&__cont {
+		display: flex;
+		align-items: center;
+		margin-top: 150px;
+	}
+
+	// .lookup__crumbs
+	&__crumbs {
+		flex: 1 1 auto;
+	}
+
+	// .lookup__search
+	&__search {
+		flex: 0 1 430px;
+	}
+}
+
+.crumbs {
+
+	// .crumbs__list
+	&__list {
+		display: flex;
+	}
+
+	// .crumbs__item
+	&__item {
+		position: relative;
+
+		// .crumbs__item:not(:last-child)
+		&:not(:last-child) {
+			padding-right: 20px;
+			margin-right: 10px;
+		}
+
+		// .crumbs__item:not(:last-child)::before
+		&:not(:last-child)::before {
+			content: ">";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			color: #0c313b;
+			font-size: 14px;
+		}
+
+		// .crumbs__item a, .crumbs__item span
+		& a,
+		& span {
+			font: 700 14px/1.35 'Montserrat';
+			color: #0c313b;
+			text-transform: none;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+			transition: all linear 0.2s;
+		}
+
+		// .crumbs__item a
+		& a:hover {
+			color: $l-blue;
+			text-decoration: none;
+		}
+	}
+}
+
+.search {
+	display: flex;
+	background: #d2d8da;
+	border-radius: 5px;
+	overflow: hidden;
+	height: 40px;
+
+	// .search__inbox
+	&__inbox {
+		position: relative;
+		flex: 1 1 auto;
+	
+		// .search__inbox::before
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 35px;
+			height: 100%;
+			// width: 18px;
+			// height: 16px;
+			background: url(../img/article/search.png) center right/18px 16px no-repeat;
+		}
+	}
+
+	// .search__input
+	&__input {
+		width: 100%;
+		height: 100%;
+		padding: 5px 10px 5px 45px;
+	}
+
+	// .search > input
+	& > input {
+		flex: 0 0 120px;
+		height: 100%;
+		background: #052131;
+		color: #fff;
+		font: 700 13px/1.35 'Montserrat';
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all linear 0.2s;
+
+		&:hover {
+			color: #052131;
+			background: $l-blue;
+		}
+	}
+}
+
+//<================================================================ ARTICLE ===============================================================>\\
+
+.article p {
+	color: #000;
+}

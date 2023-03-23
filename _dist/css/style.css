@@ -3608,6 +3608,132 @@ h2 {
   fill: #123b48;
 }
 
+.lookup__cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 150px;
+}
+
+.lookup__crumbs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.lookup__search {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 430px;
+          flex: 0 1 430px;
+}
+
+.crumbs__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.crumbs__item {
+  position: relative;
+}
+
+.crumbs__item:not(:last-child) {
+  padding-right: 20px;
+  margin-right: 10px;
+}
+
+.crumbs__item:not(:last-child)::before {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #0c313b;
+  font-size: 14px;
+}
+
+.crumbs__item a,
+.crumbs__item span {
+  font: 700 14px/1.35 "Montserrat";
+  color: #0c313b;
+  text-transform: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.crumbs__item a:hover {
+  color: #21d3cf;
+  text-decoration: none;
+}
+
+.search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #d2d8da;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 40px;
+}
+
+.search__inbox {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.search__inbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 35px;
+  height: 100%;
+  background: url(../img/article/search.png) center right/18px 16px no-repeat;
+}
+
+.search__input {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px 5px 45px;
+}
+
+.search > input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 120px;
+          flex: 0 0 120px;
+  height: 100%;
+  background: #052131;
+  color: #fff;
+  font: 700 13px/1.35 "Montserrat";
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.search > input:hover {
+  color: #052131;
+  background: #21d3cf;
+}
+
+.article p {
+  color: #000;
+}
+
 @media (max-width: 1440px) {
   .roadmap__cont {
     min-height: 1860px;
