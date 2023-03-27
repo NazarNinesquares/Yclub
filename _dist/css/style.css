@@ -3805,6 +3805,10 @@ h2 {
           justify-content: center;
 }
 
+.top-content__info {
+  font-size: 12px;
+}
+
 .top-content__info:not(:first-child) {
   color: #6d6d6d;
 }
@@ -3945,10 +3949,21 @@ h2 {
 }
 
 .item-recent__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: calc(100% - 160px);
   padding: 25px 15px 15px;
 }
 
 .item-recent__cont {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   -moz-text-align-last: left;
        text-align-last: left;
   margin-bottom: 20px;
@@ -3978,14 +3993,40 @@ h2 {
   margin-bottom: 20px;
 }
 
+.item-recent__category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+}
+
 .item-recent__category li {
+  border: 1px solid #015974;
+  border-radius: 5px;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.item-recent__category li a {
   display: inline-block;
   font: 600 12px/1.3 "Montserrat";
   color: #015974;
-  border: 1px solid #015974;
-  border-radius: 5px;
   text-transform: none;
   padding: 3px 10px;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.item-recent__category li:hover {
+  background: #015974;
+}
+
+.item-recent__category li:hover a {
+  color: #fff;
 }
 
 .item-recent__info {
@@ -5245,6 +5286,136 @@ h2 {
     height: 35px;
     font-size: 14px;
   }
+
+  .article__cont {
+    margin-bottom: 50px;
+  }
+
+  .article__content {
+    max-width: 95%;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    padding: 20px 30px;
+  }
+
+  .article__placeholder {
+    padding: 40px 20px;
+  }
+
+  .article__placeholder p {
+    font-size: 30px;
+  }
+
+  .content-article__top {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .top-content__title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .bottom-content {
+    gap: 30px;
+    padding-bottom: 80px;
+  }
+
+  .bottom-content__col {
+    width: calc(50% - 15px);
+  }
+
+  .bottom-content__col *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .bottom-content__col p {
+    font-size: 12px;
+  }
+
+  .bottom-content__col p.bottom-content__heading,
+  .bottom-content__col p.bottom-content__intro {
+    font-size: 16px;
+  }
+
+  .bottom-content__col p.bottom-content__intro::first-letter {
+    font-size: 46px;
+    margin-right: 5px;
+  }
+
+  .bottom-content__col p.bottom-content__heading {
+    margin-bottom: 10px;
+  }
+
+  .bottom-content__col figure {
+    max-width: 320px;
+  }
+
+  .recent__cont {
+    margin-bottom: 50px;
+  }
+
+  .recent__heading {
+    margin-bottom: 25px;
+  }
+
+  .recent__row {
+    gap: 12px;
+    margin-bottom: 50px;
+  }
+
+  .recent__item {
+    width: calc(33.33% - 8px);
+  }
+
+  .item-recent__ibox {
+    height: 130px;
+  }
+
+  .item-recent__content {
+    height: calc(100% - 130px);
+    padding: 15px 10px 10px;
+  }
+
+  .item-recent__cont {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .item-recent__title {
+    font-size: 16px;
+  }
+
+  .item-recent__text {
+    margin-bottom: 15px;
+  }
+
+  .item-recent__info li:not(:last-child) {
+    margin-right: 5px;
+    padding-right: 7px;
+  }
+
+  .crypto-pay__cont {
+    padding-top: 30px;
+  }
+
+  .crypto-pay__title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .crypto-pay__content {
+    padding: 15px 30px;
+  }
+
+  .crypto-pay__link {
+    font-size: 14px;
+    padding: 15px 30px;
+  }
+
+  .crypto-pay__text {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -6080,6 +6251,153 @@ h2 {
     margin: 0 auto;
     margin-bottom: 15px;
   }
+
+  .lookup__cont {
+    margin-top: 100px;
+  }
+
+  .lookup__search {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 300px;
+            flex: 0 1 300px;
+  }
+
+  .crumbs__item:not(:last-child) {
+    padding-right: 15px;
+    margin-right: 5px;
+  }
+
+  .crumbs__item:not(:last-child)::before {
+    font-size: 12px;
+  }
+
+  .crumbs__item a,
+  .crumbs__item span {
+    font-size: 12px;
+  }
+
+  .search {
+    height: 30px;
+  }
+
+  .search__inbox::before {
+    width: 25px;
+    background-size: 14px 12px;
+  }
+
+  .search__input {
+    padding: 5px 5px 5px 30px;
+  }
+
+  .search > input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 80px;
+            flex: 0 0 80px;
+    font-size: 12px;
+  }
+
+  .article__cont {
+    margin-bottom: 30px;
+  }
+
+  .article__content {
+    max-width: 95%;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+  }
+
+  .article__placeholder {
+    padding: 30px 15px;
+  }
+
+  .article__placeholder p {
+    font-size: 25px;
+  }
+
+  .top-content__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bottom-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+    padding-bottom: 50px;
+  }
+
+  .bottom-content__col {
+    width: 100%;
+  }
+
+  .bottom-content__col p {
+    font-size: 14px;
+  }
+
+  .bottom-content__col figure {
+    margin: 0 auto;
+  }
+
+  .recent__cont {
+    margin-bottom: 30px;
+  }
+
+  .recent__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .recent__item {
+    width: 100%;
+  }
+
+  .item-recent__ibox {
+    height: 160px;
+  }
+
+  .item-recent__content {
+    height: auto;
+    padding: 20px 15px 15px;
+  }
+
+  .item-recent__cont {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+
+  .item-recent__info li:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 12px;
+  }
+
+  .crypto-pay__title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .crypto-pay__link {
+    font-size: 12px;
+    padding: 15px 30px;
+  }
+
+  .crypto-pay__link span {
+    width: 60px;
+    height: 10px;
+    margin-right: 5px;
+    margin-top: 2px;
+  }
+
+  .crypto-pay__text {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -6295,6 +6613,61 @@ h2 {
   .item-line__text_small {
     font-size: 12px;
   }
+
+  .lookup__cont {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 30px;
+  }
+
+  .lookup__search {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    width: 100%;
+  }
+
+  .crumbs__item:not(:last-child) {
+    padding-right: 20px;
+    margin-right: 10px;
+  }
+
+  .crumbs__item:not(:last-child)::before {
+    font-size: 14px;
+  }
+
+  .crumbs__item a,
+  .crumbs__item span {
+    font-size: 14px;
+  }
+
+  .search {
+    height: 40px;
+  }
+
+  .search__inbox::before {
+    width: 35px;
+    background-size: 18px 16px;
+  }
+
+  .search__input {
+    padding: 5px 10px 5px 45px;
+  }
+
+  .search > input {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 120px;
+            flex: 0 0 120px;
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 425px) {
@@ -6407,5 +6780,27 @@ h2 {
     width: 139px;
     height: 45px;
     font-size: 16px;
+  }
+
+  .article__placeholder p {
+    font-size: 20px;
+  }
+
+  .top-content__title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .bottom-content__col p {
+    font-size: 12px;
+  }
+
+  .bottom-content p.bottom-content__heading,
+  .bottom-content p.bottom-content__intro {
+    font-size: 14px;
+  }
+
+  .bottom-content p.bottom-content__intro::first-letter {
+    font-size: 40px;
   }
 }
