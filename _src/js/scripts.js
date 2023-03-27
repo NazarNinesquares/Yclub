@@ -153,6 +153,18 @@ if($('.swiper').length) {
 			nextEl: '.article-slider__arrow_right',
 			prevEl: '.article-slider__arrow_left',
 		},
+		loop: true,
+	});
+
+	new Swiper('.trending__slider', {
+
+		navigation: {
+			nextEl: '.trending__arrow',
+		},
+
+		loop: true,
+		slidesPerView: 1.6,
+		spaceBetween: 15,
 	});
 }
 

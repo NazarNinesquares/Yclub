@@ -6591,6 +6591,16 @@ h2 {
 
 .recent {
 
+	// .recent_blog
+	&_blog {
+
+		// .recent_blog .recent__cont
+		.recent__cont {
+			text-align: left;
+			margin-bottom: 20px;
+		}
+	}
+
 	// .recent__cont
 	&__cont {
 		text-align: center;
@@ -6603,6 +6613,28 @@ h2 {
 		text-align: center;
 		color: #0c313b;
 		margin-bottom: 35px;
+	}
+
+	&__name {
+		position: relative;
+		display: inline-block;
+		font: 700 17px/1.35 'Montserrat';
+		color: #041317;
+		text-transform: none;
+		text-align-last: left;
+		margin-bottom: 20px;
+		padding-right: 20px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 60%;
+			right: 0;
+			transform: translateY(-50%);
+			width: 12px;
+			height: 6px;
+			background: url(../img/blog/arrow-down.png) center/contain no-repeat;
+		}
 	}
 
 	// .recent__row
@@ -6670,6 +6702,10 @@ h2 {
 		margin-bottom: 20px;
 		padding-bottom: 15px;
 		border-bottom: 1px solid #cccccc;
+
+		& *:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	// .item-recent__title
@@ -6997,6 +7033,12 @@ h2 {
 		width: 15px;
 		height: 35px;
 		background: url(../img/blog/article-arrow.png) center/contain no-repeat;
+		cursor: pointer;
+
+		&.swiper-button-disabled {
+			opacity: 0.4;
+			pointer-events: none;
+		}
 
 		// .article-slider__arrow_left
 		&_left {
@@ -7082,5 +7124,76 @@ h2 {
 				background: #fff;
 			}
 		}
+	}
+}
+
+//<=============================================================== TRENDING ===============================================================>\\
+
+.trending {
+
+	// .trending__cont
+	&__cont {
+	}
+
+	// .trending__name
+	&__name {
+	}
+
+	// .trending__slider
+	&__slider {
+		position: relative;
+	}
+
+	// .trending__wrapper
+	&__wrapper {
+	}
+
+	// .trending__slide
+	&__slide {
+		position: relative;
+	}
+
+	// .trending__slide
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	// .trending__content
+	&__content {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+
+	}
+
+	// .trending__title
+	&__title {
+	}
+
+	// .trending__text
+	&__text {
+	}
+
+	// .trending__info
+	&__info {
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50px;
+		height: 50px;
+		background: #000;
+		z-index: 2;
+	}
+}
+
+.article-data {
+
+	// .article-data__info
+	&__info {
 	}
 }
