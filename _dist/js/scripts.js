@@ -145,4 +145,15 @@ $('._anchor a').on('click', function (e) {
 	}
 })
 
+if($('.swiper').length) {
+
+	new Swiper('.article-slider__swiper', {
+
+		navigation: {
+			nextEl: '.article-slider__arrow_right',
+			prevEl: '.article-slider__arrow_left',
+		},
+	});
+}
+
 });

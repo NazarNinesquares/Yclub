@@ -228,6 +228,44 @@ h2 {
   background: url(../img/home/roadmap/home-roadmap-07.png) center/contain no-repeat;
 }
 
+.article-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.article-data__info {
+  font-size: 12px;
+  text-transform: none;
+}
+
+.article-data__info:not(:first-child) {
+  color: #6d6d6d;
+}
+
+.article-data__info:not(:last-child) {
+  position: relative;
+  margin-right: 10px;
+  padding-right: 12px;
+}
+
+.article-data__info:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: #0a313b;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3612,11 +3650,30 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-top: 150px;
   margin-bottom: 30px;
+}
+
+.lookup__tbox {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.lookup__title {
+  font: 600 45px/1.35 "MonumentExtended";
+  color: #0a313b;
+  text-transform: none;
+}
+
+.lookup__text {
+  font: 400 14px/1.46 "MonumentExtended";
+  color: #0a313b;
+  max-width: 680px;
+  text-transform: none;
 }
 
 .lookup__crumbs {
@@ -3794,43 +3851,9 @@ h2 {
 }
 
 .top-content__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.top-content__info {
-  font-size: 12px;
-}
-
-.top-content__info:not(:first-child) {
-  color: #6d6d6d;
-}
-
-.top-content__info:not(:last-child) {
-  position: relative;
-  margin-right: 10px;
-  padding-right: 12px;
-}
-
-.top-content__info:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #0a313b;
 }
 
 .bottom-content {
@@ -4030,39 +4053,9 @@ h2 {
 }
 
 .item-recent__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #052131;
-  font: 600 12px/1.3 "Montserrat";
-  text-transform: none;
-}
-
-.item-recent__info li:not(:first-child) {
-  color: #6d6d6d;
-}
-
-.item-recent__info li:not(:last-child) {
-  position: relative;
-  margin-right: 10px;
-  padding-right: 12px;
-}
-
-.item-recent__info li:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 2px;
-  height: 2px;
-  border-radius: 50%;
-  background: #6d6d6d;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .crypto-pay {
@@ -4121,6 +4114,94 @@ h2 {
 .crypto-pay__text {
   font: 700 18px/1.38 "Montserrat";
   text-transform: none;
+}
+
+.article-slider__cont {
+  position: relative;
+  padding: 0 45px;
+  margin-bottom: 30px;
+}
+
+.article-slider__slide {
+  border-radius: 5px;
+}
+
+.article-slider__arrow {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  height: 35px;
+  background: url(../img/blog/article-arrow.png) center/contain no-repeat;
+}
+
+.article-slider__arrow_left {
+  left: 15px;
+}
+
+.article-slider__arrow_right {
+  right: 15px;
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.article-slide {
+  position: relative;
+}
+
+.article-slide__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article-slide__content {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  text-transform: none;
+  background: #052131d4;
+  border: 1px solid #448c9d;
+  border-radius: 3px;
+  max-width: 515px;
+  padding: 20px 25px;
+}
+
+.article-slide__article {
+  display: inline-block;
+  font: 400 10px/1.2 "Montserrat";
+  text-transform: uppercase;
+  padding: 5px 8px;
+  background: #0a6272;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.article-slide__title {
+  display: block;
+  font: 700 16px/1.18 "Montserrat";
+  max-width: 380px;
+  margin-bottom: 10px;
+}
+
+.article-slide__title:hover {
+  text-decoration: underline;
+}
+
+.article-slide__text {
+  font: 500 12px/1.58 "Montserrat";
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #fff;
+}
+
+.article-slide__data li:not(:first-child) {
+  color: #fff;
+}
+
+.article-slide__data li:not(:last-child)::before {
+  background: #fff;
 }
 
 @media (max-width: 1440px) {
@@ -4750,6 +4831,11 @@ h2 {
 }
 
 @media (max-width: 992px) {
+  .article-data__info:not(:last-child) {
+    margin-right: 5px;
+    padding-right: 7px;
+  }
+
   .footer__cont {
     padding-top: 70px;
   }
@@ -5390,11 +5476,6 @@ h2 {
     margin-bottom: 15px;
   }
 
-  .item-recent__info li:not(:last-child) {
-    margin-right: 5px;
-    padding-right: 7px;
-  }
-
   .crypto-pay__cont {
     padding-top: 30px;
   }
@@ -5434,6 +5515,11 @@ h2 {
   body._dark .main-menu__item._active > a,
   body._dark .main-menu__item > a:hover {
     color: #fff;
+  }
+
+  .article-data__info:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 12px;
   }
 
   .footer__cont {
@@ -6371,11 +6457,6 @@ h2 {
             flex: 0 1 auto;
     margin-bottom: 20px;
     padding-bottom: 15px;
-  }
-
-  .item-recent__info li:not(:last-child) {
-    margin-right: 10px;
-    padding-right: 12px;
   }
 
   .crypto-pay__title {
