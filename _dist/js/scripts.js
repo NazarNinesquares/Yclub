@@ -166,6 +166,21 @@ if($('.swiper').length) {
 		slidesPerView: 1.6,
 		spaceBetween: 15,
 	});
+
+	new Swiper('.top-category__slider', {
+
+		loop: true,
+		slidesPerView: 'auto',
+		spaceBetween: 15,
+		loop: true,
+		loopedSlides: 2,
+		freeMode: true,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 500,
+	});
 }
 
 });
