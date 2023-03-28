@@ -3673,8 +3673,7 @@ h2 {
 .lookup__text {
   font: 400 14px/1.46 "MonumentExtended";
   color: #0a313b;
-  max-width: 680px;
-  text-transform: none;
+  max-width: 775px;
 }
 
 .lookup__crumbs {
@@ -4554,9 +4553,16 @@ h2 {
   font: 700 18px/1.38 "Montserrat";
   padding: 15px 40px;
   border-radius: 5px;
+  border: 2px solid #fff;
+  cursor: pointer;
   -webkit-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
+}
+
+.form-subscribe__submit:hover {
+  background: transparent;
+  color: #fff;
 }
 
 @media (max-width: 1440px) {
@@ -6844,6 +6850,10 @@ h2 {
         -ms-flex-pack: center;
             justify-content: center;
     gap: 30px;
+  }
+
+  .lookup__text {
+    max-width: none;
   }
 
   .lookup__search {

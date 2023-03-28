@@ -6004,8 +6004,7 @@ h2 {
 	&__text {
 		font: 400 14px/1.46 'MonumentExtended';
 		color: #0a313b;
-		max-width: 680px;
-		text-transform: none;
+		max-width: 775px;
 	}
 
 	// .lookup__crumbs
@@ -6145,6 +6144,11 @@ h2 {
 			align-items: flex-start;
 			justify-content: center;
 			gap: 30px;
+		}
+
+		// .lookup__text
+		&__text {
+			max-width: none;
 		}
 	
 		// .lookup__search
@@ -7764,7 +7768,14 @@ h2 {
 		font: 700 18px/1.38 'Montserrat';
 		padding: 15px 40px;
 		border-radius: 5px;
+		border: 2px solid #fff;
+		cursor: pointer;
 		transition: all linear 0.2s;
+
+		&:hover {
+			background: transparent;
+			color: #fff;
+		}
 	}
 }
 
