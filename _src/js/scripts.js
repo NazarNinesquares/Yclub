@@ -161,26 +161,35 @@ if($('.swiper').length) {
 		navigation: {
 			nextEl: '.trending__arrow',
 		},
-
 		loop: true,
-		slidesPerView: 1.6,
 		spaceBetween: 15,
+		slidesPerView: 1,
+		breakpoints: {
+			
+			550: {
+				slidesPerView: 1.2,
+			},
+			768: {
+				slidesPerView: 1.6,
+			},
+		},
 	});
 
 	new Swiper('.top-category__slider', {
 
 		loop: true,
 		slidesPerView: 'auto',
-		spaceBetween: 15,
+		spaceBetween: 10,
 		loop: true,
-		loopedSlides: 2,
 		freeMode: true,
-		autoplay: {
-			delay: 3000,
-			disableOnInteraction: false,
-		},
 		speed: 500,
 	});
 }
+
+$('.category-slide__button').on('click', function () {
+	
+	$('.category-slide__button').removeClass('_active');
+	$(this).addClass('_active');
+})
 
 });
