@@ -3884,10 +3884,11 @@ h2 {
   color: #052131;
 }
 
-.bottom-content__col p.bottom-content__intro::first-letter {
-  font-size: 52px;
+.bottom-content__col p.bottom-content__intro span {
+  font-size: 56px;
   line-height: 1;
   margin-right: 6px;
+  margin-bottom: -5px;
   float: left;
 }
 
@@ -5793,8 +5794,8 @@ h2 {
     font-size: 16px;
   }
 
-  .bottom-content__col p.bottom-content__intro::first-letter {
-    font-size: 46px;
+  .bottom-content__col p.bottom-content__intro span {
+    font-size: 50px;
     margin-right: 5px;
   }
 
@@ -6867,7 +6868,7 @@ h2 {
   }
 
   .search {
-    height: 40px;
+    height: 45px;
   }
 
   .search__inbox::before {
@@ -7491,8 +7492,8 @@ h2 {
     font-size: 14px;
   }
 
-  .bottom-content p.bottom-content__intro::first-letter {
-    font-size: 40px;
+  .bottom-content p.bottom-content__intro span {
+    font-size: 43px;
   }
 
   .article-slide {
