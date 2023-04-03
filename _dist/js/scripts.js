@@ -180,7 +180,6 @@ if($('.swiper').length) {
 		loop: true,
 		slidesPerView: 'auto',
 		spaceBetween: 10,
-		loop: true,
 		freeMode: true,
 		speed: 500,
 	});
