@@ -6424,6 +6424,7 @@ h4 {
 			align-items: flex-start;
 			justify-content: center;
 			gap: 30px;
+			margin-top: 100px;
 		}
 
 		// .lookup__text
@@ -8258,5 +8259,81 @@ h4 {
 			font-size: 12px;
 			padding: 5px 15px;
 		}
+	}
+}
+
+// -------------------------------------------------
+
+.bottom-content__col img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	margin: 0;
+}
+
+.bottom-content__col figcaption {
+	font: 500 12px/1.46 'Montserrat';
+	text-align: center;
+	margin-top: 5px;
+}
+
+.bottom-content__col a {
+	color: #21d3cf;
+}
+
+.bottom-content__col a:hover {
+	text-decoration: underline;
+}
+
+.bottom-content__col table {
+	display: block;
+	border-collapse: collapse;
+	overflow: auto;
+}
+
+.bottom-content__col table tbody {
+	display: block;
+	min-width: 500px;
+}
+
+.bottom-content__col table tbody,
+.bottom-content__col table tbody tr,
+.bottom-content__col table tbody tr td {
+	border: 1px solid #000;
+}
+
+.bottom-content__col table tbody tr td {
+	text-align: center;
+	vertical-align: center;
+	padding: 10px 15px
+}
+
+.bottom-content__col ul li {
+	position: relative;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	padding-left: 10px;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.bottom-content__col ul li::before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 5px;
+	height: 5px;
+	background: #000;
+	border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+	.lookup__cont {
+		margin-top: 100px;
+	}
+	
+	.crumbs__item a, .crumbs__item span, .crumbs__item:not(:last-child)::before {
+		font-size: 10px;
 	}
 }
