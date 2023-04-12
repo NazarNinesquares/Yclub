@@ -202,6 +202,18 @@ body._dark .main-nav__logo._scroll .dark {
   display: none;
 }
 
+body.single-post h1 {
+  font: 400 30px/1.43 "MonumentExtended";
+}
+
+body.single-post h2 {
+  font: 700 18px/1.46 "Montserrat";
+}
+
+body.single-post h3 {
+  font: 600 16px/1.46 "Montserrat";
+}
+
 h1 {
   font-family: "MonumentExtended", sans-serif;
   font-size: 73px;
@@ -216,16 +228,6 @@ h2 {
   line-height: 1.15;
   font-weight: 400;
   text-transform: none;
-}
-
-h3 {
-  font: 700 18px/1.46 "Montserrat";
-  color: #052131;
-}
-
-h4 {
-  font: 600 16px/1.46 "Montserrat";
-  color: #052131;
 }
 
 .scroll-top {
@@ -4057,7 +4059,6 @@ h4 {
 }
 
 .top-content__title {
-  font: 400 30px/1.43 "MonumentExtended";
   margin-bottom: 25px;
 }
 
@@ -5502,6 +5503,18 @@ h4 {
 }
 
 @media (max-width: 992px) {
+  body.single-post h1 {
+    font-size: 25px;
+  }
+
+  body.single-post h2 {
+    font-size: 16px;
+  }
+
+  body.single-post h3 {
+    font-size: 14px;
+  }
+
   .article-data__info:not(:last-child) {
     margin-right: 5px;
     padding-right: 7px;
@@ -5509,14 +5522,6 @@ h4 {
 
   .article-image__ibox {
     max-width: 320px;
-  }
-
-  h3 {
-    font-size: 16px;
-  }
-
-  h4 {
-    font-size: 14px;
   }
 
   .article-table__row {
@@ -6093,7 +6098,6 @@ h4 {
   }
 
   .top-content__title {
-    font-size: 25px;
     margin-bottom: 20px;
   }
 
@@ -6315,6 +6319,10 @@ h4 {
 }
 
 @media (max-width: 768px) {
+  body.single-post h1 {
+    font-size: 20px;
+  }
+
   h1 {
     font-size: 45px;
   }
@@ -7295,7 +7303,6 @@ h4 {
   }
 
   .top-content__title {
-    font-size: 20px;
     margin-bottom: 20px;
   }
 
@@ -7758,12 +7765,21 @@ h4 {
 }
 
 @media (max-width: 425px) {
-  h3 {
+  body.single-post h1 {
+    font-size: 18px;
+  }
+
+  body.single-post h2 {
     font-size: 14px;
   }
 
-  h4 {
+  body.single-post h3 {
     font-size: 12px;
+  }
+
+  body.single-post h4 {
+    font: 600 16px/1.46 "Montserrat";
+    color: #052131;
   }
 
   .mainscreen {
@@ -7882,7 +7898,6 @@ h4 {
   }
 
   .top-content__title {
-    font-size: 18px;
     margin-bottom: 15px;
   }
 
