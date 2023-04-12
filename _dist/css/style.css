@@ -430,6 +430,48 @@ h4 {
   margin-bottom: 15px;
 }
 
+.article-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.article-pagination__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ebebeb url(../img/blog/article-arrow.png) center/10px 20px no-repeat;
+  -webkit-transition: all linear 0.2s;
+  -o-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.article-pagination__arrow:last-child {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.article-pagination__arrow:hover {
+  background-color: #c5c4c4;
+}
+
+.article-pagination__arrow._disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4009,6 +4051,11 @@ h4 {
   border-bottom: 1px solid #cccccc;
 }
 
+.content-article__pagination {
+  margin-top: 30px;
+  margin-bottom: 120px;
+}
+
 .top-content__title {
   font: 400 30px/1.43 "MonumentExtended";
   margin-bottom: 25px;
@@ -4041,11 +4088,8 @@ h4 {
   margin-right: 30px;
 }
 
-.bottom-content {
-  padding-bottom: 120px;
-}
-
 .bottom-content__col {
+  display: none;
   width: 100%;
 }
 
@@ -4056,6 +4100,10 @@ h4 {
   -webkit-column-gap: 50px;
      -moz-column-gap: 50px;
           column-gap: 50px;
+}
+
+.bottom-content__col._active {
+  display: block;
 }
 
 .bottom-content__col > *:not(:last-child) {
@@ -4810,71 +4858,6 @@ h4 {
 .form-subscribe__submit:hover {
   background: transparent;
   color: #fff;
-}
-
-.bottom-content__col img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  margin: 0;
-}
-
-.bottom-content__col figcaption {
-  font: 500 12px/1.46 "Montserrat";
-  text-align: center;
-  margin-top: 5px;
-}
-
-.bottom-content__col a {
-  color: #21d3cf;
-}
-
-.bottom-content__col a:hover {
-  text-decoration: underline;
-}
-
-.bottom-content__col table {
-  display: block;
-  border-collapse: collapse;
-  overflow: auto;
-}
-
-.bottom-content__col table tbody {
-  display: block;
-  min-width: 500px;
-}
-
-.bottom-content__col table tbody,
-.bottom-content__col table tbody tr,
-.bottom-content__col table tbody tr td {
-  border: 1px solid #000;
-}
-
-.bottom-content__col table tbody tr td {
-  text-align: center;
-  vertical-align: center;
-  padding: 10px 15px;
-}
-
-.bottom-content__col ul li {
-  position: relative;
-  margin-bottom: 5px;
-  margin-left: 10px;
-  padding-left: 10px;
-  font-weight: 500;
-  line-height: 1.2;
-}
-
-.bottom-content__col ul li::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 0;
-  width: 5px;
-  height: 5px;
-  background: #000;
-  border-radius: 50%;
 }
 
 @media (max-width: 1440px) {
@@ -6105,13 +6088,13 @@ h4 {
     margin-bottom: 20px;
   }
 
+  .content-article__pagination {
+    margin-bottom: 80px;
+  }
+
   .top-content__title {
     font-size: 25px;
     margin-bottom: 20px;
-  }
-
-  .bottom-content {
-    padding-bottom: 80px;
   }
 
   .bottom-content__col {
@@ -6399,6 +6382,16 @@ h4 {
 
   .article-list__subitem li:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  .article-pagination {
+    max-width: 80px;
+  }
+
+  .article-pagination__arrow {
+    width: 30px;
+    height: 30px;
+    background: #ebebeb url(../img/blog/article-arrow.png) center/8px 15px no-repeat;
   }
 
   .footer__cont {
@@ -7296,6 +7289,11 @@ h4 {
     font-size: 25px;
   }
 
+  .content-article__pagination {
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
   .top-content__title {
     font-size: 20px;
     margin-bottom: 20px;
@@ -7311,10 +7309,6 @@ h4 {
 
   .top-content__quote span {
     margin-right: 20px;
-  }
-
-  .bottom-content {
-    padding-bottom: 50px;
   }
 
   .bottom-content__col {
@@ -7516,16 +7510,6 @@ h4 {
   .form-subscribe__submit {
     font-size: 12px;
     padding: 5px 15px;
-  }
-
-  .lookup__cont {
-    margin-top: 100px;
-  }
-
-  .crumbs__item a,
-  .crumbs__item span,
-  .crumbs__item:not(:last-child)::before {
-    font-size: 10px;
   }
 }
 
