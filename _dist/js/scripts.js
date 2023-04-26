@@ -216,4 +216,87 @@ $('.article-pagination__arrow').on('click', function () {
 	}
 })
 
+// <============================================================= ANIMATIONS ==============================================================> \\
+
+let dt_mainscreen = gsap.timeline({defaults: {duration: 0.4} })
+
+dt_mainscreen.from(
+	'.main-nav__logo', {
+		opacity: 0,
+		y: -20,
+		// duration: 0.4,
+		delay: 0.3
+	}
+).from(
+	'.main-menu__item', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.1
+	}
+).from(
+	'.main-nav__join', {
+		opacity: 0,
+		y: -20,
+		// duration: 0.4
+	}
+).from(
+	'.mainscreen__title', {
+		opacity: 0,
+		y: 20,
+		scale: 0.8,
+		transformOrigin: 'bottom left',
+		// duration: 0.4
+	}
+).from(
+	'.mainscreen__text, .mainscreen__sub-text', {
+		opacity: 0,
+		y: 20,
+		scale: 0.8,
+		transformOrigin: 'bottom left',
+		// duration: 0.4
+	}
+).from(
+	'.mainscreen__button', {
+		opacity: 0,
+		y: 20,
+		scale: 0.8,
+		transformOrigin: 'bottom left',
+		// duration: 0.4
+	}
+)
+
+gsap.from('.mainscreen__social a', {
+	scrollTrigger: {
+		trigger: '.mainscreen__social',
+		start: 'top bottom',
+	},
+	opacity: 0,
+	x: -20,
+	stagger: 0.1
+})
+
+gsap.from('.partners__item', {
+	scrollTrigger: {
+		trigger: '.partners',
+		start: 'top bottom',
+	},
+	opacity: 0,
+	x: -20,
+	stagger: 0.2
+})
+
+// let dt_token = gsap.timeline({defaults: {duration: 0.4} })
+
+// dt_token.from(
+// 	'.right-token__title', {
+// 		scrollTrigger: {
+// 			trigger: '.partners',
+// 			start: 'bottom center',
+// 			markers: true,
+// 		},
+// 		opacity: 0,
+// 		y: -20,
+// 	}
+// )
+
 });
