@@ -216,36 +216,51 @@ $('.article-pagination__arrow').on('click', function () {
 	}
 })
 
-// <============================================================= ANIMATIONS ==============================================================> \\
+//<############################################################## ANIMATIONS ###############################################################>\\
 
-let dt_mainscreen = gsap.timeline({defaults: {duration: 0.4} })
+//<============================================================== MAINSCREEN ===============================================================>\\
 
-dt_mainscreen.from(
+const header = gsap.timeline({
+	defaults: {
+		duration: 0.4
+	}
+})
+
+header.from(
 	'.main-nav__logo', {
 		opacity: 0,
 		y: -20,
-		// duration: 0.4,
-		delay: 0.3
+		delay: 0.3,
 	}
 ).from(
 	'.main-menu__item', {
 		opacity: 0,
 		y: -20,
-		stagger: 0.1
+		stagger: 0.1,
 	}
 ).from(
 	'.main-nav__join', {
 		opacity: 0,
 		y: -20,
-		// duration: 0.4
+		onComplete: function() {
+			$('.main-nav__join').css('transition', 'all linear 0.2s')
+		},
 	}
-).from(
+)
+
+const mainscreen = gsap.timeline({
+	defaults: {
+		duration: 0.6
+	}
+})
+
+mainscreen.from(
 	'.mainscreen__title', {
+		delay: 0.3,
 		opacity: 0,
 		y: 20,
 		scale: 0.8,
 		transformOrigin: 'bottom left',
-		// duration: 0.4
 	}
 ).from(
 	'.mainscreen__text, .mainscreen__sub-text', {
@@ -253,7 +268,7 @@ dt_mainscreen.from(
 		y: 20,
 		scale: 0.8,
 		transformOrigin: 'bottom left',
-		// duration: 0.4
+		// duration: 0.5,
 	}
 ).from(
 	'.mainscreen__button', {
@@ -261,7 +276,10 @@ dt_mainscreen.from(
 		y: 20,
 		scale: 0.8,
 		transformOrigin: 'bottom left',
-		// duration: 0.4
+		// duration: 0.5,
+		onComplete: function() {
+			$('.mainscreen__button').css('transition', 'all linear 0.2s')
+		},
 	}
 )
 
@@ -272,7 +290,10 @@ gsap.from('.mainscreen__social a', {
 	},
 	opacity: 0,
 	x: -20,
-	stagger: 0.1
+	stagger: 0.1,
+	onComplete: function() {
+		$('.mainscreen__social a').css('transition', 'all linear 0.2s')
+	},
 })
 
 gsap.from('.partners__item', {
@@ -285,18 +306,291 @@ gsap.from('.partners__item', {
 	stagger: 0.2
 })
 
-// let dt_token = gsap.timeline({defaults: {duration: 0.4} })
+//<================================================================= TOKEN =================================================================>\\
 
-// dt_token.from(
-// 	'.right-token__title', {
-// 		scrollTrigger: {
-// 			trigger: '.partners',
-// 			start: 'bottom center',
-// 			markers: true,
-// 		},
-// 		opacity: 0,
-// 		y: -20,
-// 	}
-// )
+const token_img = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.token',
+		start: 'top 80%',
+	},
+	defaults: {
+		duration: 0.2
+	},
+	repeat: -1,
+	repeatDelay: 1.5,
+})
+
+token_img.to(
+	'.token__left img', {
+		delay: 0.5,
+		rotate: -3,
+	}
+).to(
+	'.token__left img', {
+		rotate: 3,
+	}
+).to(
+	'.token__left img', {
+		rotate: -3,
+	}
+).to(
+	'.token__left img', {
+		rotate: 0,
+	}
+)
+
+const token_info = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.token',
+		start: 'top 80%',
+	},
+	defaults: {
+		duration: 0.4
+	},
+})
+
+token_info.from(
+	'.right-token__title', {
+		opacity: 0,
+		x: -20,
+	}
+).from(
+	'.right-token__list li', {
+		opacity: 0,
+		x: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.right-token__button', {
+		opacity: 0,
+		x: -20,
+		stagger: 0.2,
+		onComplete: function() {
+			$('.right-token__button').css('transition', 'all linear 0.2s')
+		}
+	}
+)
+
+//<================================================================ MISSION ================================================================>\\
+
+const mission_top = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.mission',
+		start: 'top 80%',
+	},
+	defaults: {
+		duration: 0.4
+	},
+})
+
+mission_top.from(
+	'.mission__title', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.industry-mission__title', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.industry-mission__video', {
+		opacity: 0,
+		x: -20,
+	},
+).from(
+	'.industry-mission__tbox', {
+		opacity: 0,
+		x: 20,
+	}
+).from(
+	'.industry-bottom__button', {
+		opacity: 0,
+		y: -20,
+		onComplete: function() {
+			$('.industry-bottom__button').css('transition', 'all linear 0.2s')
+		},
+	}
+)
+
+const mission_bottom = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.ecosystem-mission',
+		start: 'top 80%',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+mission_bottom.from(
+	'.ecosystem-mission__title', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.ecosystem-mission__text', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.ecosystem-mission__ibox', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 1,
+	},
+)
+
+//<================================================================ CHARTERS ===============================================================>\\
+
+const charters = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.charters',
+		start: 'top 80%',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+charters.from(
+	'.charters__title', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.charters__subtitle', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.charters__content', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+	},
+).from(
+	'.charters__text', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+	},
+).from(
+	'.charters__button', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+		onComplete: function() {
+			$('.charters__button').css('transition', 'all linear 0.2s')
+		},
+	},
+)
+
+//<================================================================= ROADMAP ===============================================================>\\
+
+gsap.from(
+	'.top-roadmap__title', {
+		scrollTrigger: {
+			trigger: '.roadmap',
+			start: 'top 80%',
+		},
+		opacity: 0,
+		x: 20,
+		duration: 0.4,
+	}
+)
+
+gsap.from(
+	'.top-roadmap__quote', {
+		scrollTrigger: {
+			trigger: '.roadmap',
+			start: 'top 80%',
+		},
+		delay: 0.4,
+		opacity: 0,
+		x: 20,
+		duration: 0.4,
+	}
+)
+
+gsap.from(
+	'.top-roadmap__tab-nav li', {
+		scrollTrigger: {
+			trigger: '.roadmap',
+			start: 'top 80%',
+		},
+		delay: 0.4,
+		opacity: 0,
+		x: -20,
+		duration: 0.4,
+		stagger: 0.1,
+		onComplete: function() {
+			$('.charters__button').css('transition', 'all linear 0.2s')
+		},
+	}
+)
+
+gsap.from(
+	'.tab-roadmap__item', {
+		scrollTrigger: {
+			trigger: '.tab-roadmap__item',
+			start: 'top 80%',
+		},
+		opacity: 0,
+		y: -20,
+		duration: 0.6,
+		stagger: 0.4
+	}
+)
+
+//<================================================================= ROADMAP ===============================================================>\\
+
+const footer = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.footer',
+		start: 'top bottom',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+footer.from(
+	'.info-footer', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.nav-footer__column', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.social-footer a', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.1,
+		onComplete: function() {
+			$('.social-footer a').css('transition', 'all linear 0.2s')
+		},
+	}
+)
+
+gsap.from(
+	'.main-nav__content._active .main-menu .main-menu__item', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+)
 
 });

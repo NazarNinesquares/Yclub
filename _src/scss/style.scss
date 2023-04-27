@@ -86,7 +86,7 @@ body._dark {
 		}
 	}
 
-	.main-nav__join a {
+	.main-nav__join {
 		background: #06242b;
 		color: #15dde3;
 		border-color: #15dde3;
@@ -697,9 +697,6 @@ h2 {
 
 	&__join {
 		flex: 0 0 120px;
-	}
-
-	&__join a {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -711,10 +708,9 @@ h2 {
 		font-weight: 700;
 		font-size: 12px;
 		border: 1px solid #fff;
-		transition: all linear 0.2s;
 	}
 
-	&__join a:hover {
+	&__join:hover {
 		background: #123b48;
 		color: #fff;
 		border-color: #21697f;
@@ -960,9 +956,6 @@ h2 {
 		&__join {
 			flex: 0 1 40px;
 			width: 140px;
-		}
-
-		&__join a {
 			min-height: 40px;
 			font-size: 16px;
 		}
@@ -1226,11 +1219,11 @@ h2 {
 		display: block;
 		width: 25px;
 		margin-bottom: 17px;
-		transition: all linear 0.2s;
+		// transition: all linear 0.2s;
 	}
 
 	& a:hover {
-		opacity: 0.5;
+		opacity: 0.5!important;
 	}
 
 	& a img {
@@ -1547,7 +1540,6 @@ h2 {
 		font-weight: 400;
 		line-height: 1.2;
 		color: #051d23;
-		// transition: all linear 0.2s;
 		
 		& svg {
 			position: absolute;
@@ -1590,11 +1582,10 @@ h2 {
 		& a {
 			width: 18px;
 			height: 21px;
-			// transition: all linear 0.2s;
 		}
 
 		& a:hover {
-			opacity: 0.7;
+			opacity: 0.7!important;
 		}
 
 		& a img {
@@ -2056,7 +2047,6 @@ h2 {
 		background: #81f3f8;
 		border-radius: 5px;
 		border: 2px solid #81f3f8;
-		transition: all linear 0.2s;
 
 		&:hover {
 			background: linear-gradient(90deg, rgba(129,243,248,1) 0%, rgba(129,243,248,0) 60%);
@@ -2311,7 +2301,6 @@ h2 {
 		align-items: center;
 		width: 157px;
 		height: 48px;
-		// background: $l-blue;
 		background: linear-gradient(0deg, rgba(59,210,222,1) 0%, rgba(32,238,255,1) 100%);
 		color: #051d23;
 		font-size: 16px;
@@ -2319,7 +2308,6 @@ h2 {
 		font-weight: 700;
 		border: 1px solid #fff;
 		border-radius: 3px;
-		transition: all linear 0.2s;
 
 		&:hover {
 			background: #123b48;
@@ -2678,7 +2666,6 @@ h2 {
 		line-height: 1.2;
 		font-weight: 600;
 		border-radius: 5px;
-		transition: all linear 0.2s;
 
 		&:hover {
 			background: #123b48;
@@ -2835,7 +2822,6 @@ h2 {
 			padding: 0 10px 6px;
 			opacity: 0.4;
 			cursor: pointer;
-			transition: all linear 0.2s;
 			pointer-events: none;
 		}
 
