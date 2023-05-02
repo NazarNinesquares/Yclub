@@ -595,58 +595,92 @@ gsap.from(
 	}
 )
 
-function mouseparallax(cont, el, rotateIndex, translateIndex){
+window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
 
-	$(cont).mousemove(function(e) {
-		
-		cx = Math.ceil($(window).width() / 2.0);
-		cy = Math.ceil($(window).height() / 2.0);
-		dx = e.clientX - cx;
-		dy = e.clientY - cy;
-		
-		tiltx = (dy / cy);
-		tilty = - (dx / cx);
-		radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-		degree = (radius * rotateIndex);
-	
-		if (translateIndex) {
-			$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-			$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-		} else {
-			$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-			$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+function windowSize(ma) {
+	if ((ma && ma.matches) || $(window).width() <= 768) {
+
+		const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
+
+		// Створити обробник подій для DeviceOrientation
+		const handleOrientation = (e) => {
+			// Отримати показники гіроскопу
+			const alpha = e.originalEvent.alpha;
+			const beta = e.originalEvent.beta;
+			const gamma = e.originalEvent.gamma;
+
+			// Обробка даних гіроскопу
+			$('.alpha').text(alpha)
+			$('.beta').text(beta)
+			$('.gamma').text(gamma)
+		};
+
+		// Додати обробник подій до DeviceOrientation
+		if (deviceOrientation) {
+
+			$(window).on('deviceorientation', handleOrientation);
 		}
-	});
-}
 
-mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
-mouseparallax('.ecosystem-mission', '.ecosystem-mission__ibox img', 15, 25);
-mouseparallax('.charters', '.charters__content', 15, 20);
-mouseparallax('.charters', '.charters__text', 15, 25);
-mouseparallax('.charters', '.charters__button a', 15, 25);
-mouseparallax('.roadmap', '.tab-roadmap__item', 10, 15);
-mouseparallax('.roadmap', '.roadmap-item__info', 10, 5);
-mouseparallax('.roadmap', '.roadmap-item__list', 10, 5);
+		function mouseparallax(cont, el, rotateIndex, translateIndex){
 
-const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
+			$(cont).mousemove(function(e) {
+				
+				cx = Math.ceil($(window).width() / 2.0);
+				cy = Math.ceil($(window).height() / 2.0);
+				dx = beta - cx;
+				dy = gamma - cy;
+				
+				tiltx = (dy / cy);
+				tilty = - (dx / cx);
+				radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+				degree = (radius * rotateIndex);
+			
+				if (translateIndex) {
+					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+				} else {
+					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+				}
+			});
+		}
+		
+		mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
+	} else {
 
-// Створити обробник подій для DeviceOrientation
-const handleOrientation = (event) => {
-  // Отримати показники гіроскопу
-  const alpha = event.originalEvent.alpha;
-  const beta = event.originalEvent.beta;
-  const gamma = event.originalEvent.gamma;
+		function mouseparallax(cont, el, rotateIndex, translateIndex){
 
-  // Обробка даних гіроскопу
-  $('.alpha').text(alpha)
-  $('.beta').text(beta)
-  $('.gamma').text(gamma)
-//   console.log(`alpha: ${alpha}, beta: ${beta}, gamma: ${gamma}`);
-};
-
-// Додати обробник подій до DeviceOrientation
-if (deviceOrientation) {
-  $(window).on('deviceorientation', handleOrientation);
-}
+			$(cont).mousemove(function(e) {
+				
+				cx = Math.ceil($(window).width() / 2.0);
+				cy = Math.ceil($(window).height() / 2.0);
+				dx = e.clientX - cx;
+				dy = e.clientY - cy;
+				
+				tiltx = (dy / cy);
+				tilty = - (dx / cx);
+				radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+				degree = (radius * rotateIndex);
+			
+				if (translateIndex) {
+					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+				} else {
+					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+				}
+			});
+		}
+		
+		mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
+		mouseparallax('.ecosystem-mission', '.ecosystem-mission__ibox img', 15, 25);
+		mouseparallax('.charters', '.charters__content', 15, 20);
+		mouseparallax('.charters', '.charters__text', 15, 25);
+		mouseparallax('.charters', '.charters__button a', 15, 25);
+		mouseparallax('.roadmap', '.tab-roadmap__item', 10, 15);
+		mouseparallax('.roadmap', '.roadmap-item__info', 10, 5);
+		mouseparallax('.roadmap', '.roadmap-item__list', 10, 5);
+	}
+}windowSize();
 
 });
