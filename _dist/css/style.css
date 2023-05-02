@@ -4910,6 +4910,12 @@ h2 {
   border-radius: 50%;
 }
 
+.alpha,
+.beta,
+.gamma {
+  color: #000;
+}
+
 @media (max-width: 1440px) {
   .roadmap__cont {
     min-height: 1860px;
