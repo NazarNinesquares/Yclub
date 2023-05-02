@@ -433,15 +433,16 @@ mission_bottom.from(
 		opacity: 0,
 		y: -20,
 	}
-).from(
-	'.ecosystem-mission__ibox', {
-		opacity: 0,
-		x: -20,
-		scale: 0.8,
-		transformOrigin: 'top center',
-		duration: 1,
-	},
 )
+// .from(
+// 	'.ecosystem-mission__ibox', {
+// 		opacity: 0,
+// 		x: -20,
+// 		scale: 0.8,
+// 		transformOrigin: 'top center',
+// 		duration: 1,
+// 	},
+// )
 
 //<================================================================ CHARTERS ===============================================================>\\
 
@@ -465,34 +466,35 @@ charters.from(
 		opacity: 0,
 		y: -20,
 	}
-).from(
-	'.charters__content', {
-		opacity: 0,
-		x: -20,
-		scale: 0.8,
-		transformOrigin: 'top center',
-		duration: 0.5,
-	},
-).from(
-	'.charters__text', {
-		opacity: 0,
-		x: -20,
-		scale: 0.8,
-		transformOrigin: 'top center',
-		duration: 0.5,
-	},
-).from(
-	'.charters__button', {
-		opacity: 0,
-		x: -20,
-		scale: 0.8,
-		transformOrigin: 'top center',
-		duration: 0.5,
-		onComplete: function() {
-			$('.charters__button').css('transition', 'all linear 0.2s')
-		},
-	},
 )
+// .from(
+// 	'.charters__content', {
+// 		opacity: 0,
+// 		x: -20,
+// 		scale: 0.8,
+// 		transformOrigin: 'top center',
+// 		duration: 0.5,
+// 	},
+// ).from(
+// 	'.charters__text', {
+// 		opacity: 0,
+// 		x: -20,
+// 		scale: 0.8,
+// 		transformOrigin: 'top center',
+// 		duration: 0.5,
+// 	},
+// ).from(
+// 	'.charters__button', {
+// 		opacity: 0,
+// 		x: -20,
+// 		scale: 0.8,
+// 		transformOrigin: 'top center',
+// 		duration: 0.5,
+// 		onComplete: function() {
+// 			$('.charters__button').css('transition', 'all linear 0.2s')
+// 		},
+// 	},
+// )
 
 //<================================================================= ROADMAP ===============================================================>\\
 
@@ -533,7 +535,7 @@ gsap.from(
 		duration: 0.4,
 		stagger: 0.1,
 		onComplete: function() {
-			$('.charters__button').css('transition', 'all linear 0.2s')
+			$('.top-roadmap__tab-nav li').css('transition', 'all linear 0.2s')
 		},
 	}
 )
@@ -592,5 +594,59 @@ gsap.from(
 		stagger: 0.2,
 	}
 )
+
+function mouseparallax(cont, el, rotateIndex, translateIndex){
+
+	$(cont).mousemove(function(e) {
+		
+		cx = Math.ceil($(window).width() / 2.0);
+		cy = Math.ceil($(window).height() / 2.0);
+		dx = e.clientX - cx;
+		dy = e.clientY - cy;
+		
+		tiltx = (dy / cy);
+		tilty = - (dx / cx);
+		radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+		degree = (radius * rotateIndex);
+	
+		if (translateIndex) {
+			$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+			$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+		} else {
+			$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+			$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+		}
+	});
+}
+
+mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
+mouseparallax('.ecosystem-mission', '.ecosystem-mission__ibox img', 15, 25);
+mouseparallax('.charters', '.charters__content', 15, 20);
+mouseparallax('.charters', '.charters__text', 15, 25);
+mouseparallax('.charters', '.charters__button a', 15, 25);
+mouseparallax('.roadmap', '.tab-roadmap__item', 10, 15);
+mouseparallax('.roadmap', '.roadmap-item__info', 10, 5);
+mouseparallax('.roadmap', '.roadmap-item__list', 10, 5);
+
+const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
+
+// Створити обробник подій для DeviceOrientation
+const handleOrientation = (event) => {
+  // Отримати показники гіроскопу
+  const alpha = event.originalEvent.alpha;
+  const beta = event.originalEvent.beta;
+  const gamma = event.originalEvent.gamma;
+
+  // Обробка даних гіроскопу
+  $('.alpha').text(alpha)
+  $('.beta').text(beta)
+  $('.gamma').text(gamma)
+//   console.log(`alpha: ${alpha}, beta: ${beta}, gamma: ${gamma}`);
+};
+
+// Додати обробник подій до DeviceOrientation
+if (deviceOrientation) {
+  $(window).on('deviceorientation', handleOrientation);
+}
 
 });
