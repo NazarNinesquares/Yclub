@@ -622,27 +622,24 @@ function windowSize(ma) {
 		}
 
 		function mouseparallax(cont, el, rotateIndex, translateIndex){
-
-			$(cont).mousemove(function(e) {
 				
-				cx = Math.ceil($(window).width() / 2.0);
-				cy = Math.ceil($(window).height() / 2.0);
-				dx = beta - cx;
-				dy = gamma - cy;
-				
-				tiltx = (dy / cy);
-				tilty = - (dx / cx);
-				radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-				degree = (radius * rotateIndex);
+			cx = Math.ceil($(window).width() / 2.0);
+			cy = Math.ceil($(window).height() / 2.0);
+			dx = beta - cx;
+			dy = gamma - cy;
 			
-				if (translateIndex) {
-					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-				} else {
-					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-				}
-			});
+			tiltx = (dy / cy);
+			tilty = - (dx / cx);
+			radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
+			degree = (radius * rotateIndex);
+		
+			if (translateIndex) {
+				$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+				$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
+			} else {
+				$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+				$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
+			}
 		}
 		
 		mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
