@@ -4914,6 +4914,8 @@ h2 {
 .beta,
 .gamma {
   color: #000;
+  text-align: center;
+  padding: 10px;
 }
 
 @media (max-width: 1440px) {
