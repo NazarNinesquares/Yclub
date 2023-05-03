@@ -287,6 +287,7 @@ gsap.from('.mainscreen__social a', {
 	scrollTrigger: {
 		trigger: '.mainscreen__social',
 		start: 'top bottom',
+		toggleActions: 'play pause resume none',
 	},
 	opacity: 0,
 	x: -20,
@@ -300,6 +301,7 @@ gsap.from('.partners__item', {
 	scrollTrigger: {
 		trigger: '.partners',
 		start: 'top bottom',
+		toggleActions: 'play pause resume none',
 	},
 	opacity: 0,
 	x: -20,
@@ -312,6 +314,7 @@ const token_img = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.token',
 		start: 'top 80%',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.2
@@ -343,6 +346,7 @@ const token_info = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.token',
 		start: 'top 80%',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.4
@@ -377,6 +381,7 @@ const mission_top = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.mission',
 		start: 'top 80%',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.4
@@ -417,6 +422,7 @@ const mission_bottom = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.ecosystem-mission',
 		start: 'top 80%',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.4,
@@ -450,6 +456,7 @@ const charters = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.charters',
 		start: 'top 80%',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.4,
@@ -503,6 +510,7 @@ gsap.from(
 		scrollTrigger: {
 			trigger: '.roadmap',
 			start: 'top 80%',
+			toggleActions: 'play pause resume none',
 		},
 		opacity: 0,
 		x: 20,
@@ -515,6 +523,7 @@ gsap.from(
 		scrollTrigger: {
 			trigger: '.roadmap',
 			start: 'top 80%',
+			toggleActions: 'play pause resume none',
 		},
 		delay: 0.4,
 		opacity: 0,
@@ -528,6 +537,7 @@ gsap.from(
 		scrollTrigger: {
 			trigger: '.roadmap',
 			start: 'top 80%',
+			toggleActions: 'play pause resume none',
 		},
 		delay: 0.4,
 		opacity: 0,
@@ -545,6 +555,7 @@ gsap.from(
 		scrollTrigger: {
 			trigger: '.tab-roadmap__item',
 			start: 'top 80%',
+			toggleActions: 'play pause resume none',
 		},
 		opacity: 0,
 		y: -20,
@@ -559,6 +570,7 @@ const footer = gsap.timeline({
 	scrollTrigger: {
 		trigger: '.footer',
 		start: 'top bottom',
+		toggleActions: 'play pause resume none',
 	},
 	defaults: {
 		duration: 0.4,
