@@ -607,9 +607,9 @@ gsap.from(
 	}
 )
 
-window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
+window.matchMedia('(max-width: 768px)').addEventListener('change', animateMedia)
 
-function windowSize(ma) {
+function animateMedia(ma) {
 	
 	if ((ma && ma.matches) || $(window).width() <= 768) {
 
@@ -694,6 +694,6 @@ function windowSize(ma) {
 		mouseparallax('.roadmap', '.roadmap-item__info', 10, 5);
 		mouseparallax('.roadmap', '.roadmap-item__list', 10, 5);
 	}
-}windowSize();
+}animateMedia();
 
 });
