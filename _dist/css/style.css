@@ -1017,6 +1017,7 @@ h2 {
 .mainscreen {
   position: relative;
   padding-bottom: 60%;
+  background: url(../img/home/main/home-main-14.jpg) center/cover no-repeat;
 }
 
 .mainscreen__bg {
@@ -4908,14 +4909,6 @@ h2 {
   height: 5px;
   background: #000;
   border-radius: 50%;
-}
-
-.alpha,
-.beta,
-.gamma {
-  color: #000;
-  text-align: center;
-  padding: 10px;
 }
 
 @media (max-width: 1440px) {

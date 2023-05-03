@@ -1457,6 +1457,7 @@ h2 {
 .mainscreen {
 	position: relative;
 	padding-bottom: 60%;
+	background: url(../img/home/main/home-main-14.jpg) center/cover no-repeat;
 
 	&__bg {
 		position: absolute;
@@ -8255,10 +8256,10 @@ h2 {
 	}
 }
 
-.alpha,
-.beta,
-.gamma {
-	color: #000;
-	text-align: center;
-	padding: 10px;
-}
+// .alpha,
+// .beta,
+// .gamma {
+// 	color: #000;
+// 	text-align: center;
+// 	padding: 10px;
+// }

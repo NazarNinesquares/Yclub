@@ -598,30 +598,31 @@ gsap.from(
 window.matchMedia('(max-width: 768px)').addEventListener('change', windowSize)
 
 function windowSize(ma) {
+	
 	if ((ma && ma.matches) || $(window).width() <= 768) {
 
-		const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
+		// const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
 
-		// Створити обробник подій для DeviceOrientation
-		const handleOrientation = (e) => {
-			// Отримати показники гіроскопу
-			const alpha = e.originalEvent.alpha;
-			const beta = e.originalEvent.beta;
-			const gamma = e.originalEvent.gamma;
+		// // Створити обробник подій для DeviceOrientation
+		// const handleOrientation = (e) => {
+		// 	// Отримати показники гіроскопу
+		// 	const alpha = e.originalEvent.alpha;
+		// 	const beta = e.originalEvent.beta;
+		// 	const gamma = e.originalEvent.gamma;
 
-			// Обробка даних гіроскопу
-			$('.alpha').text(alpha)
-			$('.beta').text(beta)
-			$('.gamma').text(gamma)
-		};
+		// 	// Обробка даних гіроскопу
+		// 	$('.alpha').text(alpha)
+		// 	$('.beta').text(beta)
+		// 	$('.gamma').text(gamma)
+		// };
 
-		// Додати обробник подій до DeviceOrientation
-		if (deviceOrientation) {
+		// // Додати обробник подій до DeviceOrientation
+		// if (deviceOrientation) {
 
-			$(window).on('deviceorientation', handleOrientation);
-		}
+		// 	$(window).on('deviceorientation', handleOrientation);
+		// }
 
-		$('.mainscreen__tbox').css('transforme', 'translate:' + gamma*3 + 'px' + beta*3 +'px')
+		// $('.mainscreen__tbox').css('transforme', 'translate:' + gamma*3 + 'px' + beta*3 +'px')
 
 		// function mouseparallax(cont, el, rotateIndex, translateIndex){
 				
@@ -671,6 +672,7 @@ function windowSize(ma) {
 			});
 		}
 		
+		mouseparallax('.mainscreen', '.mainscreen__bg_dt img', 10, -12);
 		mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
 		mouseparallax('.ecosystem-mission', '.ecosystem-mission__ibox img', 15, 25);
 		mouseparallax('.charters', '.charters__content', 15, 20);
