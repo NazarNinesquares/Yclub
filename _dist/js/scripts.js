@@ -439,16 +439,15 @@ mission_bottom.from(
 		opacity: 0,
 		y: -20,
 	}
+).from(
+	'.ecosystem-mission__ibox', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 1,
+	},
 )
-// .from(
-// 	'.ecosystem-mission__ibox', {
-// 		opacity: 0,
-// 		x: -20,
-// 		scale: 0.8,
-// 		transformOrigin: 'top center',
-// 		duration: 1,
-// 	},
-// )
 
 //<================================================================ CHARTERS ===============================================================>\\
 
@@ -473,35 +472,34 @@ charters.from(
 		opacity: 0,
 		y: -20,
 	}
+).from(
+	'.charters__content', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+	},
+).from(
+	'.charters__text', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+	},
+).from(
+	'.charters__button', {
+		opacity: 0,
+		x: -20,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		duration: 0.5,
+		onComplete: function() {
+			$('.charters__button').css('transition', 'all linear 0.2s')
+		},
+	},
 )
-// .from(
-// 	'.charters__content', {
-// 		opacity: 0,
-// 		x: -20,
-// 		scale: 0.8,
-// 		transformOrigin: 'top center',
-// 		duration: 0.5,
-// 	},
-// ).from(
-// 	'.charters__text', {
-// 		opacity: 0,
-// 		x: -20,
-// 		scale: 0.8,
-// 		transformOrigin: 'top center',
-// 		duration: 0.5,
-// 	},
-// ).from(
-// 	'.charters__button', {
-// 		opacity: 0,
-// 		x: -20,
-// 		scale: 0.8,
-// 		transformOrigin: 'top center',
-// 		duration: 0.5,
-// 		onComplete: function() {
-// 			$('.charters__button').css('transition', 'all linear 0.2s')
-// 		},
-// 	},
-// )
 
 //<================================================================= ROADMAP ===============================================================>\\
 
@@ -606,94 +604,5 @@ gsap.from(
 		stagger: 0.2,
 	}
 )
-
-window.matchMedia('(max-width: 768px)').addEventListener('change', animateMedia)
-
-function animateMedia(ma) {
-	
-	if ((ma && ma.matches) || $(window).width() <= 768) {
-
-		// const deviceOrientation = window.DeviceOrientationEvent || window.OrientationEvent;
-
-		// // Створити обробник подій для DeviceOrientation
-		// const handleOrientation = (e) => {
-		// 	// Отримати показники гіроскопу
-		// 	const alpha = e.originalEvent.alpha;
-		// 	const beta = e.originalEvent.beta;
-		// 	const gamma = e.originalEvent.gamma;
-
-		// 	// Обробка даних гіроскопу
-		// 	$('.alpha').text(alpha)
-		// 	$('.beta').text(beta)
-		// 	$('.gamma').text(gamma)
-		// };
-
-		// // Додати обробник подій до DeviceOrientation
-		// if (deviceOrientation) {
-
-		// 	$(window).on('deviceorientation', handleOrientation);
-		// }
-
-		// $('.mainscreen__tbox').css('transforme', 'translate:' + gamma*3 + 'px' + beta*3 +'px')
-
-		// function mouseparallax(cont, el, rotateIndex, translateIndex){
-				
-			// cx = Math.ceil($(window).width() / 2.0);
-			// cy = Math.ceil($(window).height() / 2.0);
-			// dx = beta - cx;
-			// dy = gamma - cy;
-			
-			// tiltx = (dy / cy);
-			// tilty = - (dx / cx);
-			// radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-			// degree = (radius * rotateIndex);
-		
-			// if (translateIndex) {
-			// 	$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-			// 	$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-			// } else {
-			// 	$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-			// 	$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-			// }
-		// }
-		
-		// mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
-	} else {
-
-		function mouseparallax(cont, el, rotateIndex, translateIndex){
-
-			$(cont).mousemove(function(e) {
-				
-				cx = Math.ceil($(window).width() / 2.0);
-				cy = Math.ceil($(window).height() / 2.0);
-				dx = e.clientX - cx;
-				dy = e.clientY - cy;
-				
-				tiltx = (dy / cy);
-				tilty = - (dx / cx);
-				radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2));
-				degree = (radius * rotateIndex);
-			
-				if (translateIndex) {
-					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)translate(' + tilty * translateIndex + 'px,' + -tiltx * translateIndex + 'px)');
-				} else {
-					$(el, cont).css('-webkit-transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-					$(el, cont).css('transform','rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)');
-				}
-			});
-		}
-		
-		mouseparallax('.mainscreen', '.mainscreen__bg_dt img', 10, -12);
-		mouseparallax('.mainscreen', '.mainscreen__tbox', 13, 20);
-		mouseparallax('.ecosystem-mission', '.ecosystem-mission__ibox img', 15, 25);
-		mouseparallax('.charters', '.charters__content', 15, 20);
-		mouseparallax('.charters', '.charters__text', 15, 25);
-		mouseparallax('.charters', '.charters__button a', 15, 25);
-		mouseparallax('.roadmap', '.tab-roadmap__item', 10, 15);
-		mouseparallax('.roadmap', '.roadmap-item__info', 10, 5);
-		mouseparallax('.roadmap', '.roadmap-item__list', 10, 5);
-	}
-}animateMedia();
 
 });
