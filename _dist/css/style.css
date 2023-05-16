@@ -2358,9 +2358,6 @@ h2 {
   background: #0c2229;
   border: 1px solid #17716e;
   border-radius: 5px;
-  -webkit-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 
 .top-swap__button:hover {
@@ -4237,9 +4234,6 @@ h2 {
   border: 2px solid #052131;
   background: transparent;
   padding: 15px 30px;
-  -webkit-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 
 .recent__more:hover {
@@ -4644,9 +4638,6 @@ h2 {
   padding: 10px 25px;
   border: 2px solid #052131;
   border-radius: 5px;
-  -webkit-transition: all linear 0.2s;
-  -o-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 
 .category__load-more:hover {
@@ -6987,7 +6978,6 @@ h2 {
   }
 
   .top-ecosystem__ibox {
-    display: block;
     margin-bottom: 50px;
   }
 

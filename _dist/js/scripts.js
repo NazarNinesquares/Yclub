@@ -605,4 +605,321 @@ gsap.from(
 	}
 )
 
+//<================================================================== CHART ================================================================>\\
+
+const chart = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.chart',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+chart.from(
+	'.top-chart__logo', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.top-chart__subtext', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.chart-info__row', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.main-chart__ibox', {
+		opacity: 0,
+		scale: 0.6,
+		transformOrigin: 'top center',
+		y: -20,
+	}
+).from(
+	'.main-chart__text', {
+		opacity: 0,
+		y: -20,
+	}
+)
+
+//<=================================================================== SWAP ================================================================>\\
+
+const swap = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.swap',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+swap.from(
+	'.top-swap__title', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.top-swap__text', {
+		opacity: 0,
+		y: -20,
+	}
+).from(
+	'.top-swap__button', {
+		opacity: 0,
+		y: -20,
+		onComplete: function() {
+			$('.top-swap__button').css('transition', 'all linear 0.2s')
+		},
+	}
+).from(
+	'.swap__main', {
+		opacity: 0,
+		scale: 0.6,
+		transformOrigin: 'top center',
+		y: -20,
+	}
+).from(
+	'.swap__advise', {
+		opacity: 0,
+		y: -20,
+	}
+)
+
+//<=================================================================== SWAP ================================================================>\\
+
+const top_ecosystem = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.ecosystem__top',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+top_ecosystem.from(
+	'.top-ecosystem__left', {
+		opacity: 0,
+		x: -30,
+	}
+).from(
+	'.top-ecosystem__right', {
+		opacity: 0,
+		x: 30,
+	}
+)
+
+const ecosystem_main = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.ecosystem__mid',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+ecosystem_main.from(
+	'.ecosystem__mid-headings p', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.mid-ecosystem__item', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.bottom-ecosystem__text', {
+		opacity: 0,
+		y: -20,
+	}
+)
+
+//<=================================================================== BLOG ================================================================>\\
+
+const lookup = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.lookup',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+lookup.from(
+	'.lookup__tbox', {
+		opacity: 0,
+		x: -30,
+	}
+).from(
+	'.lookup__crumbs', {
+		opacity: 0,
+		x: -30,
+	}
+).from(
+	'.lookup__search', {
+		opacity: 0,
+		x: 30,
+	}
+)
+
+const recent = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.recent',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+recent.from(
+	'.recent__item', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.recent__more', {
+		opacity: 0,
+		y: -20,
+	}
+)
+
+const category = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.category',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+category.from(
+	'.category-content__item', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.category__load-more', {
+		opacity: 0,
+		y: -20,
+		onComplete: function() {
+			$('.category__load-more').css('transition', 'all linear 0.2s')
+		},
+	}
+)
+
+const subscribe = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.subscribe',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+subscribe.from(
+	'.subscribe__title', {
+		opacity: 0,
+		y: -20,
+		stagger: 0.2,
+	}
+).from(
+	'.subscribe__form', {
+		opacity: 0,
+		y: -20,
+	}
+)
+
+//<================================================================= BENEFITS ==============================================================>\\
+
+const benefits = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.benefits',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+benefits.from(
+	'.benefits__top', {
+		opacity: 0,
+		x: -30,
+	}
+).from(
+	'.table-benefits__row', {
+		opacity: 0,
+		x: -30,
+		stagger: 0.2,
+	}
+)
+
+//<================================================================== ARTICLE ==============================================================>\\
+
+const article = gsap.timeline({
+	scrollTrigger: {
+		trigger: '.article',
+		start: 'top bottom',
+		toggleActions: 'play pause resume none',
+	},
+	defaults: {
+		duration: 0.4,
+	},
+})
+
+article.from(
+	'.article__ibox', {
+		opacity: 0,
+		scale: 0.8,
+		transformOrigin: 'top center',
+		y: -30,
+	}
+).from(
+	'.top-content__title', {
+		opacity: 0,
+		y: -30,
+	}
+)
+
+//<==================================================================== 404 ================================================================>\\
+
+gsap.from(
+	'.error__number', {
+		opacity: 0,
+		x: -30,
+	}
+)
+
+gsap.from(
+	'.error__info', {
+		opacity: 0,
+		x: 30,
+	}
+)
+
 });
